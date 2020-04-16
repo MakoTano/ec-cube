@@ -9,8 +9,8 @@ volumes:
     driver: local
   mysql-database:
     driver: local
-  mailcatcher-data:
-    driver: local
+  # mailcatcher-data:
+  #   driver: local
 
   ### ignore folder volume #####
   var:
@@ -39,18 +39,18 @@ services:
       - backend
 
   ### Postgres ################################
-  postgres:
-    image: postgres:10
-    environment:
-      - POSTGRES_DB=eccubedb
-      - POSTGRES_USER=dbuser
-      - POSTGRES_PASSWORD=secret
-    ports:
-      - 15432:5432
-    volumes:
-      - pg-database:/var/lib/postgresql/data
-    networks:
-      - backend
+  # postgres:
+  #   image: postgres:10
+  #   environment:
+  #     - POSTGRES_DB=eccubedb
+  #     - POSTGRES_USER=dbuser
+  #     - POSTGRES_PASSWORD=secret
+  #   ports:
+  #     - 15432:5432
+  #   volumes:
+  #     - pg-database:/var/lib/postgresql/data
+  #   networks:
+  #     - backend
 
   ### MySQL ##################################
   mysql:
@@ -58,20 +58,24 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: eccubedb
+      # MYSQL_USER: dbuser
+      # MYSQL_PASSWORD: secret
       MYSQL_USER: dbuser
-      MYSQL_PASSWORD: secret
+      MYSQL_PASSWORD: root
     volumes:
       - mysql-database:/var/lib/mysql
+      - "./dockerconfig/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf"
+      - "./logs/mysql:/var/log/mysql"
     ports:
       - 13306:3306
     networks:
       - backend
-
-  ### Mailcatcher ##################################
-  mailcatcher:
-    image: schickling/mailcatcher
-    ports:
-      - "1080:1080"
-      - "1025:1025"
-    networks:
-      - backend
+  #
+  # ### Mailcatcher ##################################
+  # mailcatcher:
+  #   image: schickling/mailcatcher
+  #   ports:
+  #     - "1080:1080"
+  #     - "1025:1025"
+  #   networks:
+  #     - backend
