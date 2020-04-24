@@ -194,42 +194,42 @@ file that was distributed with this source code.
                                         {{ form_errors(form.password.second) }}
                                     </div>
                                 </div>
-                                <div class="row mb-2">
-                                    <div class="col-3">
-                                        <span>{{ 'admin.common.gender'|trans }}</span>
-                                    </div>
-                                    <div class="col">
-                                        {{ form_widget(form.sex,  {'label_attr': {'class': 'radio-inline'}}) }}
-                                        {{ form_errors(form.sex) }}
-                                    </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-3">
-                                        <span>{{ 'admin.common.job'|trans }}</span>
-                                    </div>
-                                    <div class="col">
-                                        {{ form_widget(form.job) }}
-                                        {{ form_errors(form.job) }}
-                                    </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-3">
-                                        <span>{{ 'admin.common.birth_day'|trans }}</span>
-                                    </div>
-                                    <div class="col">
-                                        {{ form_widget(form.birth) }}
-                                        {{ form_errors(form.birth) }}
-                                    </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-3">
-                                        <span>{{ 'admin.common.point'|trans }}</span>
-                                    </div>
-                                    <div class="col">
-                                        {{ form_widget(form.point) }}
-                                        {{ form_errors(form.point) }}
-                                    </div>
-                                </div>
+                                {#<div class="row mb-2">#}
+                                {#    <div class="col-3">#}
+                                {#        <span>{{ 'admin.common.gender'|trans }}</span>#}
+                                {#    </div>#}
+                                {#    <div class="col">#}
+                                {#        {{ form_widget(form.sex,  {'label_attr': {'class': 'radio-inline'}}) }}#}
+                                {#        {{ form_errors(form.sex) }}#}
+                                {#    </div>#}
+                                {#</div>#}
+                                {#<div class="row mb-2">#}
+                                {#    <div class="col-3">#}
+                                {#        <span>{{ 'admin.common.job'|trans }}</span>#}
+                                {#    </div>#}
+                                {#    <div class="col">#}
+                                {#        {{ form_widget(form.job) }}#}
+                                {#        {{ form_errors(form.job) }}#}
+                                {#    </div>#}
+                                {#</div>#}
+                                {#<div class="row mb-2">#}
+                                {#    <div class="col-3">#}
+                                {#        <span>{{ 'admin.common.birth_day'|trans }}</span>#}
+                                {#    </div>#}
+                                {#    <div class="col">#}
+                                {#        {{ form_widget(form.birth) }}#}
+                                {#        {{ form_errors(form.birth) }}#}
+                                {#    </div>#}
+                                {#</div>#}
+                                {#<div class="row mb-2">#}
+                                {#    <div class="col-3">#}
+                                {#        <span>{{ 'admin.common.point'|trans }}</span>#}
+                                {#    </div>#}
+                                {#    <div class="col">#}
+                                {#        {{ form_widget(form.point) }}#}
+                                {#        {{ form_errors(form.point) }}#}
+                                {#    </div>#}
+                                {#</div>#}
 
                                 {# エンティティ拡張の自動出力 #}
                                 {% for f in form if f.vars.eccube_form_options.auto_render %}
