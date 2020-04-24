@@ -276,46 +276,46 @@ file that was distributed with this source code.
                         </div><!-- /#shop-statistical -->
                     </div>
                     <div class="col mb-4">
-                        <div id="ec-cube-plugin" class="card rounded border-0 h-100">
-                            <div class="card-header border-bottom-0">
-                                <div class="d-inline-block">
-                                    <span class="card-title">{{ 'admin.home.recommend_plugins_title'|trans }}</span>
-                                </div>
-                            </div>
-                            <div class="card-body py-0" style="max-height: 395px; overflow-y: scroll">
-                                {% for plugin in recommendedPlugins %}
-                                    <div class="row py-3 border border-bottom-0 border-left-0 border-right-0">
-                                        <div class="col-5 col-md-4">
-                                            <a href="#" data-toggle="modal" data-target="#searchPluginModal-{{ plugin.id }}">
-                                                <img src="{{ plugin.image }}" class="w-100" alt="{{ plugin.name }}">
-                                            </a>
-                                        </div>
-                                        <div class="col-7 col-md-8 pl-0">
-                                            <a href="#" data-toggle="modal" data-target="#searchPluginModal-{{ plugin.id }}">{{ plugin.name }}</a>
-                                            <p class="m-0 pt-2">
-                                                {{ plugin.short_description }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    {{ include('@admin/Store/plugin_detail_modal.twig', {'item': plugin} ) }}
-                                {% endfor %}
-                            </div>
-                            <div class="card-footer">
-                                > <a href="{{ url('admin_store_plugin_owners_search_page') }}">{{ 'admin.home.recommend_plugins.owner_store'|trans }}</a>
-                            </div>
-                        </div><!-- /#ec-cube-plugin -->
+                    {#    <div id="ec-cube-plugin" class="card rounded border-0 h-100">#}
+                    {#        <div class="card-header border-bottom-0">#}
+                    {#            <div class="d-inline-block">#}
+                    {#                <span class="card-title">{{ 'admin.home.recommend_plugins_title'|trans }}</span>#}
+                    {#            </div>#}
+                    {#        </div>#}
+                    {#        <div class="card-body py-0" style="max-height: 395px; overflow-y: scroll">#}
+                    {#            {% for plugin in recommendedPlugins %}#}
+                    {#                <div class="row py-3 border border-bottom-0 border-left-0 border-right-0">#}
+                    {#                    <div class="col-5 col-md-4">#}
+                    {#                        <a href="#" data-toggle="modal" data-target="#searchPluginModal-{{ plugin.id }}">#}
+                    {#                            <img src="{{ plugin.image }}" class="w-100" alt="{{ plugin.name }}">#}
+                    {#                        </a>#}
+                    {#                    </div>#}
+                    {#                    <div class="col-7 col-md-8 pl-0">#}
+                    {#                        <a href="#" data-toggle="modal" data-target="#searchPluginModal-{{ plugin.id }}">{{ plugin.name }}</a>#}
+                    {#                        <p class="m-0 pt-2">#}
+                    {#                            {{ plugin.short_description }}#}
+                    {#                        </p>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                    {#                {{ include('@admin/Store/plugin_detail_modal.twig', {'item': plugin} ) }}#}
+                    {#            {% endfor %}#}
+                    {#        </div>#}
+                    {#        <div class="card-footer">#}
+                    {#            > <a href="{{ url('admin_store_plugin_owners_search_page') }}">{{ 'admin.home.recommend_plugins.owner_store'|trans }}</a>#}
+                    {#        </div>#}
+                    {#    </div><!-- /#ec-cube-plugin -->#}
                     </div>
                     <div class="col mb-4">
-                        <div id="ec-cube-news" class="card rounded border-0 h-100">
-                            <div class="card-header">
-                                <div class="d-inline-block">
-                                    <span class="card-title">{{ 'admin.home.news_title'|trans }}</span>
-                                </div>
-                            </div>
-                            <div class="card-body p-0">
-                                <iframe name="information" class="link_list_wrap" src="{{ eccube_config.eccube_info_url }}" style="width:100%; border:0; min-height:300px;"></iframe>
-                            </div>
-                        </div><!-- /#ec-cube-news -->
+                    {#    <div id="ec-cube-news" class="card rounded border-0 h-100">#}
+                    {#        <div class="card-header">#}
+                    {#            <div class="d-inline-block">#}
+                    {#                <span class="card-title">{{ 'admin.home.news_title'|trans }}</span>#}
+                    {#            </div>#}
+                    {#        </div>#}
+                    {#        <div class="card-body p-0">#}
+                    {#            <iframe name="information" class="link_list_wrap" src="{{ eccube_config.eccube_info_url }}" style="width:100%; border:0; min-height:300px;"></iframe>#}
+                    {#        </div>#}
+                    {#    </div><!-- /#ec-cube-news -->#}
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.c-primaryCol -->
