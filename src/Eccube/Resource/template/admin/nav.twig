@@ -62,30 +62,30 @@ file that was distributed with this source code.
                 {% endif %}
             </li>
         {% endfor %}
-        <!-- 情報 -->
-        <li class="c-mainNavArea__navItem">
-            <a class="c-mainNavArea__navItemTitle collapsed" data-toggle="collapse" href="#others" aria-expanded="false"
-               aria-controls="others">
-                <i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
-                <span>{{ 'admin.info'|trans }}</span>
-            </a>
-            <ul class="collapse" id="others">
-                <li>
-                    <a href="{{ eccube_config.eccube_official_site_url }}" target="_blank">
-                        <span>{{ 'admin.info.official_site'|trans }}</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ eccube_config.eccube_community_site_url }}" target="_blank">
-                        <span>{{ 'admin.info.community'|trans }}</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ eccube_config.eccube_document_url }}" target="_blank">
-                        <span>{{ 'admin.info.document'|trans }}</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        {#<!-- 情報 -->#}
+        {#<li class="c-mainNavArea__navItem">#}
+        {#    <a class="c-mainNavArea__navItemTitle collapsed" data-toggle="collapse" href="#others" aria-expanded="false"#}
+        {#       aria-controls="others">#}
+        {#        <i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>#}
+        {#        <span>{{ 'admin.info'|trans }}</span>#}
+        {#    </a>#}
+        {#    <ul class="collapse" id="others">#}
+        {#        <li>#}
+        {#            <a href="{{ eccube_config.eccube_official_site_url }}" target="_blank">#}
+        {#                <span>{{ 'admin.info.official_site'|trans }}</span>#}
+        {#            </a>#}
+        {#        </li>#}
+        {#        <li>#}
+        {#            <a href="{{ eccube_config.eccube_community_site_url }}" target="_blank">#}
+        {#                <span>{{ 'admin.info.community'|trans }}</span>#}
+        {#            </a>#}
+        {#        </li>#}
+        {#        <li>#}
+        {#            <a href="{{ eccube_config.eccube_document_url }}" target="_blank">#}
+        {#                <span>{{ 'admin.info.document'|trans }}</span>#}
+        {#            </a>#}
+        {#        </li>#}
+        {#    </ul>#}
+        {#</li>#}
     </ul>
 </nav>
