@@ -91,6 +91,8 @@ RUN if [ ! -f ${APACHE_DOCUMENT_ROOT}/.env ]; then \
 # ビルド時点でDBを起動出来ない場合等に指定が必要となる。
 ARG SKIP_INSTALL_SCRIPT_ON_DOCKER_BUILD=false
 
+RUN chmod 777 -R /var/www/html/html/upload
+
 RUN if [ ! -f ${APACHE_DOCUMENT_ROOT}/var/eccube.db ] && [ ! ${SKIP_INSTALL_SCRIPT_ON_DOCKER_BUILD} = "true" ]; then \
   composer run-script installer-scripts && composer run-script auto-scripts \
   ; fi
