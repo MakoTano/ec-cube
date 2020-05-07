@@ -9,26 +9,32 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 #}
 <div class="ec-footerRole">
-    <div class="ec-footerRole__inner">
-        <ul class="ec-footerNavi">
-            <li class="ec-footerNavi__link">
-                <a href="{{ url('help_about') }}">{{ 'front.block.footer.about_us'|trans }}</a>
-            </li>
-            <li class="ec-footerNavi__link">
-                <a href="{{ url('help_privacy') }}">{{ 'front.block.footer.privacy_policy'|trans }}</a>
-            </li>
-            <li class="ec-footerNavi__link">
-                <a href="{{ url('help_tradelaw') }}">{{ 'front.block.footer.act_on_specified_commercial_transactions'|trans }}</a>
-            </li>
-            <li class="ec-footerNavi__link">
-                <a href="{{ url('contact') }}">{{ 'front.block.footer.inquiry'|trans }}</a>
-            </li>
-        </ul>
-        <div class="ec-footerTitle">
-            <div class="ec-footerTitle__logo">
-                <a href="{{ url('homepage') }}">{{ BaseInfo.shop_name }}</a>
-            </div>
-            <div class="ec-footerTitle__copyright">copyright (c) {{ BaseInfo.shop_name }} all rights reserved.</div>
-        </div>
-    </div>
+	<div class="ec-footerRole__inner">
+		<ul class="ec-footerNavi">
+			<li class="ec-footerNavi__link">
+				<a href="{{ url('help_about') }}">{{ 'front.block.footer.about_us'|trans }}</a>
+			</li>
+			<li class="ec-footerNavi__link">
+				<a href="{{ url('help_privacy') }}">{{ 'front.block.footer.privacy_policy'|trans }}</a>
+			</li>
+			<li class="ec-footerNavi__link">
+				<a href="{{ url('help_tradelaw') }}">{{ 'front.block.footer.act_on_specified_commercial_transactions'|trans }}</a>
+			</li>
+			<li class="ec-footerNavi__link">
+				<a href="{{ url('contact') }}">{{ 'front.block.footer.inquiry'|trans }}</a>
+			</li>
+		</ul>
+		<div class="ec-footerTitle" style="padding: 10px; background-color: white; color: black; border-radius: 10px;">
+			<div class="ec-footerTitle__logo">未成年の飲酒は法律で禁止されています</div>
+			<div class="ec-footerTitle__copyright">飲酒は20歳になってから。飲酒運転は法律で禁止されています。<br/>妊娠期・授乳期の飲酒は、胎児・乳児の発育に悪影響を与えるおそれがあります。</div>
+		</div>
+		<div class="ec-footerTitle" style="padding: 10px">
+			<div class="ec-footerTitle__logo">
+				<a href="{{ url('homepage') }}">{{ BaseInfo.shop_name }}</a>
+			</div>
+			<div class="ec-footerTitle__copyright">copyright (c)
+				{{ BaseInfo.shop_name }}
+				all rights reserved.</div>
+		</div>
+	</div>
 </div>
