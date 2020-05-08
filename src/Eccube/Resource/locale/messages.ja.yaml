@@ -915,6 +915,7 @@ admin.customer.customer_address_registration: お届け先登録
 # ラベル/メッセージ
 admin.customer.customer_id: 会員ID
 admin.customer.customer_info: 会員情報
+admin.customer.customer_info_warning_message: 会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。
 admin.customer.purchase_history: 注文履歴
 admin.customer.purchase_history__not_found: 注文履歴がありません
 admin.customer.customer_address: お届け先住所

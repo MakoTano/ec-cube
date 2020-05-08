@@ -915,6 +915,7 @@ admin.customer.customer_address_registration: Register Delivery Addresses
 # Labels / Messages
 admin.customer.customer_id: Customer ID
 admin.customer.customer_info: Customer Info
+admin.customer.customer_info_warning_message: Please input <span class="text-danger">the claim information</span> to company name, address and telephone.
 admin.customer.purchase_history: Order History
 admin.customer.purchase_history__not_found: No order history is found
 admin.customer.customer_address: Delivery Address
