@@ -63,15 +63,15 @@ common.total__with_separator: 合計：
 common.payment_total: お支払い合計
 common.reduced_tax_rate_symbol: ※
 common.reduced_tax_rate_messeage: ※ は軽減税率対象商品です。
-common.tax_rate_target: '税率 %rate% %対象'
+common.tax_rate_target: "税率 %rate% %対象"
 common.delivery_fee: 送料
 common.charge: 手数料
 common.discount: 値引き
 common.point: ポイント
 common.enabled: 有効
 common.disabled: 無効
-common.user_name: '%last_name% %first_name% 様'
-common.user_name.honor: '様'
+common.user_name: "%last_name% %first_name% 様"
+common.user_name.honor: "様"
 common.login: ログイン
 common.remember_me: 次回から自動的にログインする
 common.signup: 新規会員登録
@@ -80,8 +80,8 @@ common.customer_address_count_is_over: お届け先登録の上限の%count%件�
 common.search_keyword: キーワードを入力
 common.delete_confirm: 削除してもよろしいですか?
 common.pagetop: ページトップへ
-common.name.prefix: ''
-common.name.suffix: ' 様'
+common.name.prefix: ""
+common.name.suffix: " 様"
 
 #====================================================================================
 # フロント画面
@@ -137,7 +137,6 @@ front.block.login.logout: ログアウト
 front.block.login.to_cart: カートを見る
 front.block.login.to_home: ホームに戻る
 
-
 #------------------------------------------------------------------------------------
 # 問い合わせ
 #------------------------------------------------------------------------------------
@@ -158,6 +157,7 @@ front.contact.complete_message__body: 万一、ご確認メールが届かない
 front.entry.title: 新規会員登録
 front.entry.terms: 利用規約
 front.entry.agree_with_terms: '<a class="ec-link" href="%url%" target="_blank">利用規約</a>に同意してお進みください'
+front.entry.agree_over_twenty: "私は20歳以上です。"
 front.entry.agree: 同意する
 front.entry.disagree: 同意しない
 front.entry.confirm_title: 新規会員登録(確認)
@@ -220,7 +220,7 @@ front.mypage.nav__customer: 会員情報編集
 front.mypage.nav__customer_complete: 会員情報編集(完了)
 front.mypage.nav__customer_address: お届け先一覧
 front.mypage.nav__withdrow: 退会手続き
-front.mypage.history_count: '%count%件の履歴があります'
+front.mypage.history_count: "%count%件の履歴があります"
 front.mypage.history_not_found: ご注文履歴はありません。
 front.mypage.message_not_found: 記載なし
 front.mypage.view_detail: 詳細を見る
@@ -244,11 +244,11 @@ front.mypage.mail_not_found: メール履歴はありません。
 front.mypage.mail_list: メール配信履歴一覧
 front.mypage.customer_complete_message__title: 会員登録内容の変更が完了いたしました
 front.mypage.customer_complete_message__body: それでは、引き続きショッピングをお楽しみください。
-front.mypage.favorite_count: '%count%件のお気に入りがあります'
+front.mypage.favorite_count: "%count%件のお気に入りがあります"
 front.mypage.favorite_not_found: お気に入りは登録されていません。
-front.mypage.customer_address_count: '%count%件のお届け先があります'
+front.mypage.customer_address_count: "%count%件のお届け先があります"
 front.mypage.customer_address_not_found: お届け先は登録されていません。
-front.mypage.add_customer_address: '新規お届け先を追加する'
+front.mypage.add_customer_address: "新規お届け先を追加する"
 front.mypage.withdraw_message__title: 退会手続きの前にご確認ください
 front.mypage.withdraw_message__body: 退会手続きが完了した時点で、現在保存されている購入履歴やお届け先等の情報は、すべて削除されますのでご注意ください。
 front.mypage.withdraw_execute_message__title: 退会手続きを実行してもよろしいでしょうか？
@@ -326,7 +326,7 @@ front.shopping.delivery_time: お届け時間
 front.shopping.to_multiple: お届け先を追加する
 front.shopping.payment_info: お支払方法
 front.shopping.point_info: 利用ポイント
-front.shopping.available_point: '%point% pt が利用可能です。'
+front.shopping.available_point: "%point% pt が利用可能です。"
 front.shopping.point_prev: 利用ポイント
 front.shopping.prev_point: ご注文前のポイント
 front.shopping.next_point: ご注文後のポイント
@@ -442,13 +442,13 @@ admin.common.select__pref: 都道府県を選択
 admin.common.select__unspecified: 指定なし
 admin.common.separator__range: 〜
 admin.common.separator__colon: ：
-admin.common.count: '%count%件'
+admin.common.count: "%count%件"
 admin.common.search_detail: 詳細検索
 admin.common.search_result: 検索結果：%count%件が該当しました
 admin.common.search_invalid_condition: 検索条件に誤りがあります
 admin.common.search_no_result: 検索条件に合致するデータが見つかりませんでした
 admin.common.search_try_change_condition: 検索条件を変えて、再度検索をお試しください
-admin.common.search_try_advanced_search: '[詳細検索]も試してみましょう'
+admin.common.search_try_advanced_search: "[詳細検索]も試してみましょう"
 admin.common.csv_download: CSVダウンロード
 admin.common.csv_upload: CSVファイルをアップロード
 admin.common.csv_skeleton_download: 雛形ファイルダウンロード
@@ -458,27 +458,26 @@ admin.common.file_select: ファイルを選択
 admin.common.file_select_empty: 選択されていません
 admin.common.csv_invalid_format: CSVのフォーマットが一致しません
 admin.common.csv_invalid_no_data: CSVデータが存在しません
-admin.common.csv_invalid_required: '%line%行目の%name%が設定されていません'
-admin.common.csv_invalid_greater_than_zero: '%line%行目の%name%は0以上の数値を設定してください。'
-admin.common.csv_invalid_format_line: '%line%行目のCSVフォーマットが一致しません'
-admin.common.csv_invalid_date_format: '%line%行目の%name%の日付フォーマットが異なります'
-admin.common.csv_invalid_not_found: '%line%行目の%name%が存在しません'
-admin.common.csv_invalid_not_found_target: '%line%行目の%name%「%target_name%」が存在しません'
-admin.common.csv_invalid_not_same: '%line%行目の%name1%と%name2%には同じ値を使用できません'
-admin.common.csv_invalid_can_not: '%line%行目の%name%は設定できません'
+admin.common.csv_invalid_required: "%line%行目の%name%が設定されていません"
+admin.common.csv_invalid_greater_than_zero: "%line%行目の%name%は0以上の数値を設定してください。"
+admin.common.csv_invalid_format_line: "%line%行目のCSVフォーマットが一致しません"
+admin.common.csv_invalid_date_format: "%line%行目の%name%の日付フォーマットが異なります"
+admin.common.csv_invalid_not_found: "%line%行目の%name%が存在しません"
+admin.common.csv_invalid_not_found_target: "%line%行目の%name%「%target_name%」が存在しません"
+admin.common.csv_invalid_not_same: "%line%行目の%name1%と%name2%には同じ値を使用できません"
+admin.common.csv_invalid_can_not: "%line%行目の%name%は設定できません"
 admin.common.csv_invalid_image: '%line%行目の%name%には末尾に"/"や"../"を使用できません'
-admin.common.csv_invalid_foreign_key: '%line%行目の%name%は関連するデータがあるため削除できません'
-admin.common.csv_invalid_description_detail_upper_limit: '%line%行目の%name%は%max%文字以下の文字列を指定してください。'
+admin.common.csv_invalid_foreign_key: "%line%行目の%name%は関連するデータがあるため削除できません"
+admin.common.csv_invalid_description_detail_upper_limit: "%line%行目の%name%は%max%文字以下の文字列を指定してください。"
 admin.common.drag_and_drop_description: 項目の順番はドラッグ＆ドロップでも変更可能です。
 admin.common.drag_and_drop_image_description: 画像をドラッグ＆ドロップまたは
 admin.common.delete_modal__title: 削除します
-admin.common.delete_modal__message: 'この操作はあとから取り消すことができません。「%name%」を削除してよろしいですか？'
+admin.common.delete_modal__message: "この操作はあとから取り消すことができません。「%name%」を削除してよろしいですか？"
 admin.common.move_to_confirm_title: ページを移動します
-admin.common.move_to_confirm_message: '%name%に移動します。編集内容を保存してから移動しますか？'
+admin.common.move_to_confirm_message: "%name%に移動します。編集内容を保存してから移動しますか？"
 admin.common.move_to_confirm_move_only: 保存せずに移動
 admin.common.move_to_confirm_save_and_move: 保存して移動
 admin.common.admin_url_warning: 管理画面URLは、セキュリティのため推測されにくいものを設定してください。「<a href="%url%">セキュリティ管理</a>」から設定できます。
-
 
 # エンティティに関連するラベル
 admin.common.id: ID
@@ -532,7 +531,7 @@ admin.home.shop_status_out_of_stock: 在庫切れ商品数
 admin.home.shop_status_products: 取扱商品数
 admin.home.shop_status_customers: 会員数
 admin.home.sales_summary_title: 売上状況
-admin.home.sales_summary_value: '%amount% / %count% 件'
+admin.home.sales_summary_value: "%amount% / %count% 件"
 admin.home.sales_summary_this_month: 今月の売上金額 / 売上件数
 admin.home.sales_summary_today: 今日の売上金額 / 売上件数
 admin.home.sales_summary_yesterday: 昨日の売上金額 / 売上件数
@@ -545,7 +544,7 @@ admin.home.recommend_plugins_title: おすすめのプラグイン
 admin.home.recommend_plugins.owner_store: オーナーズストア
 admin.home.news_title: お知らせ
 
-admin.header.user_name: '%name% 様'
+admin.header.user_name: "%name% 様"
 admin.header.logout: ログアウト
 admin.header.last_login: 最終ログイン
 admin.header.change_password: パスワード変更
@@ -579,7 +578,7 @@ admin.product.product_csv_upload: 商品CSV登録
 admin.product.category_csv_upload: カテゴリCSV登録
 
 # flashメッセージ
-admin.product.bulk_change_status_complete: '%status%: %count%件が正常に適用されました'
+admin.product.bulk_change_status_complete: "%status%: %count%件が正常に適用されました"
 admin.product.copy_complete: 商品を複製しました
 admin.product.copy_error: 商品の複製に失敗しました
 admin.product.reset_complete: 商品規格を初期化しました
@@ -607,7 +606,7 @@ admin.product.copy__confirm_message: 商品を複製してよろしいですか�
 admin.product.name: 商品名
 admin.product.image: 商品画像
 admin.product.image__short: 画像
-admin.product.image_size: '推奨サイズ : 600px x 600px以上'
+admin.product.image_size: "推奨サイズ : 600px x 600px以上"
 admin.product.sale_type: 販売種別
 admin.product.description_detail: 商品説明
 admin.product.description_list: 商品説明(一覧)
@@ -636,7 +635,7 @@ admin.product.create_date__card_title: 登録日・更新日
 admin.product.move_to_category: カテゴリの追加・編集
 admin.product.move_to_tag: タグの追加・編集
 admin.product.move_to_product_class: 商品規格の編集
-admin.product.move_to_product_class__confirm_title: '「%name%」の商品規格'
+admin.product.move_to_product_class__confirm_title: "「%name%」の商品規格"
 admin.product.multi_search_label: 商品名・商品ID・商品コード
 admin.product.product_class: 商品規格
 admin.product.product_class__short: 規格
@@ -653,7 +652,7 @@ admin.product.product_class__reset_confirm_message: |
 admin.product.product_class__reset_confirm_excecute: 規格を初期化
 admin.product.product_class_set_stock_quantity: 在庫数を入力、もしくは在庫無制限を設定してください。
 admin.product.copy_first_line: 1行目をすべての行に複製
-admin.product.procuct_class_count: '%count%件の組み合わせがあります'
+admin.product.procuct_class_count: "%count%件の組み合わせがあります"
 admin.product.stock_unlimited: 在庫数無制限
 admin.product.stock_unlimited__short: 無制限
 admin.product.class_name: 規格名
@@ -687,19 +686,19 @@ admin.product.unselected_class: 選択されていません
 admin.product.product_csv.product_id_col: 商品ID
 admin.product.product_csv.product_id_description: 新規登録の場合は空にしてください。既存の商品を更新する場合は、商品IDを指定してください。
 admin.product.product_csv.display_status_col: 公開ステータス(ID)
-admin.product.product_csv.display_status_description: ''
+admin.product.product_csv.display_status_description: ""
 admin.product.product_csv.product_name_col: 商品名
-admin.product.product_csv.product_name_description: ''
+admin.product.product_csv.product_name_description: ""
 admin.product.product_csv.shop_memo_col: ショップ用メモ欄
-admin.product.product_csv.shop_memo_description: ''
+admin.product.product_csv.shop_memo_description: ""
 admin.product.product_csv.description_list_col: 商品説明(一覧)
-admin.product.product_csv.description_list_description: ''
+admin.product.product_csv.description_list_description: ""
 admin.product.product_csv.description_detail_col: 商品説明(詳細)
-admin.product.product_csv.description_detail_description: ''
+admin.product.product_csv.description_detail_description: ""
 admin.product.product_csv.keyword_col: 検索ワード
-admin.product.product_csv.keyword_description: ''
+admin.product.product_csv.keyword_description: ""
 admin.product.product_csv.free_area_col: フリーエリア
-admin.product.product_csv.free_area_description: ''
+admin.product.product_csv.free_area_description: ""
 admin.product.product_csv.delete_flag_col: 商品削除フラグ
 admin.product.product_csv.delete_flag_description: 0:登録 1:削除を指定します。未指定の場合、0として扱います。
 admin.product.product_csv.product_image_col: 商品画像
@@ -709,19 +708,19 @@ admin.product.product_csv.category_description: カテゴリIDを指定します
 admin.product.product_csv.tag_col: タグ(ID)
 admin.product.product_csv.tag_description: タグIDを指定します。複数タグの場合、タグIDをカンマ区切りで「"」で囲んでください。
 admin.product.product_csv.sale_type_col: 販売種別(ID)
-admin.product.product_csv.sale_type_description: ''
+admin.product.product_csv.sale_type_description: ""
 admin.product.product_csv.class_category1_col: 規格分類1(ID)
-admin.product.product_csv.class_category1_description: ''
+admin.product.product_csv.class_category1_description: ""
 admin.product.product_csv.class_category2_col: 規格分類2(ID)
-admin.product.product_csv.class_category2_description: ''
+admin.product.product_csv.class_category2_description: ""
 admin.product.product_csv.delivery_duration_col: 発送日目安(ID)
-admin.product.product_csv.delivery_duration_description: ''
+admin.product.product_csv.delivery_duration_description: ""
 admin.product.product_csv.product_code_col: 商品コード
-admin.product.product_csv.product_code_description: ''
+admin.product.product_csv.product_code_description: ""
 admin.product.product_csv.stock_col: 在庫数
 admin.product.product_csv.stock_description: 在庫数無制限フラグが0の場合、0以上の数値を設定してください。
 admin.product.product_csv.stock_unlimited_col: 在庫数無制限フラグ
-admin.product.product_csv.stock_unlimited_description: '0:制限 1: 無制限を指定します。'
+admin.product.product_csv.stock_unlimited_description: "0:制限 1: 無制限を指定します。"
 admin.product.product_csv.sale_limit_col: 販売制限数
 admin.product.product_csv.sale_limit_description: 1以上の数値を設定
 admin.product.product_csv.normal_price_col: 通常価格
@@ -737,9 +736,9 @@ admin.product.product_csv.tax_rate_description: 商品別税率機能設定が�
 admin.product.category_csv.category_id_col: カテゴリID
 admin.product.category_csv.category_id_description: 新規登録の場合は空にしてください。既存のカテゴリを更新する場合は、カテゴリIDを指定してください。
 admin.product.category_csv.category_name_col: カテゴリ名
-admin.product.category_csv.category_name_description: ''
+admin.product.category_csv.category_name_description: ""
 admin.product.category_csv.parent_category_id_col: 親カテゴリID
-admin.product.category_csv.parent_category_id_description: ''
+admin.product.category_csv.parent_category_id_description: ""
 admin.product.category_csv.delete_flag_col: カテゴリ削除フラグ
 admin.product.category_csv.delete_flag_description: 0:登録 1:削除を指定します。未指定の場合、0として扱います。
 
@@ -787,7 +786,7 @@ admin.order.add_shipping: 出荷情報の追加
 admin.order.delete_shipping: 出荷情報を削除
 admin.order.delete_shipping_error__confirm_title: 出荷情報を削除できません
 admin.order.delete_shipping_error__confirm_message: まず出荷情報に設定されている明細を削除してから、出荷情報を削除してください
-admin.order.delete_shipping__confirm_message: '出荷情報は注文から削除されます。出荷情報(%num%)を削除しますか？'
+admin.order.delete_shipping__confirm_message: "出荷情報は注文から削除されます。出荷情報(%num%)を削除しますか？"
 admin.order.order_item_info: 注文商品情報
 admin.order.order_item_type: 明細種別
 admin.order.add_product_item: 商品を追加
@@ -814,7 +813,7 @@ admin.order.purchase_count__start: 購入件数(開始)
 admin.order.purchase_count__end: 購入件数(終了)
 admin.order.tracking_number: お問い合わせ番号
 admin.order.tracking_number_error: お問い合わせ番号は半角英数字かハイフンのみを入力してください。
-admin.order.mail_purchase_product_count: '他%count%点'
+admin.order.mail_purchase_product_count: "他%count%点"
 admin.order.mail_history: メール送信履歴
 admin.order.mail_send_date: メール送信日時
 admin.order.mail_subject: 件名
@@ -837,7 +836,7 @@ admin.order.shop_memo_for_shipped: 出荷用メモ欄
 admin.order.shipping__card_title: 出荷情報
 admin.order.shipping_id: 出荷ID
 admin.order.shipping_mail: 出荷メール
-admin.order.shipping_mail__completed: '%date%に出荷メールを送信済です。'
+admin.order.shipping_mail__completed: "%date%に出荷メールを送信済です。"
 admin.order.shipping_mail__sent: 送信済
 admin.order.shipping_mail__unsent: 未送信
 admin.order.bulk_action__confirm_view_mail_body: メールの文面を確認
@@ -847,7 +846,7 @@ admin.order.bulk_action__complete_message: 完了しました。
 admin.order.shipping_mail_send: 出荷メール送信
 admin.order.shipping_mail_send__confirm_title: 出荷お知らせメールを送信します
 admin.order.shipping_mail_send__confirm_message: 出荷お知らせメールを送信します。メールの文面を確認してから［送信］ボタンを押してください。この操作は取り消すことができません。ご注意ください。
-admin.order.shipping_mail_send__complete_message: '%count%件のメールを送信しました。'
+admin.order.shipping_mail_send__complete_message: "%count%件のメールを送信しました。"
 admin.order.to_shipped__confirm_title: 出荷済に更新します
 admin.order.to_shipped__confirm_message: 出荷情報を出荷済みにします。同時におこなう操作を選択してから［実行］ボタンを押してください。この操作は取り消すことができません。ご注意ください。
 admin.order.to_shipped__confirm_send_mail: メールの送信
@@ -862,7 +861,7 @@ admin.order.not_payment: 未入金
 admin.order.unshipped: 未出荷
 admin.order.delete__confirm_title: 注文情報を削除します
 admin.order.delete__confirm_message: 注文情報を削除してよろしいですか？
-admin.order.delete_item__confirm_message: '明細は注文から削除されます。「%name%」を削除してよろしいですか？'
+admin.order.delete_item__confirm_message: "明細は注文から削除されます。「%name%」を削除してよろしいですか？"
 admin.order.change_payment_method_message: お支払方法の変更に伴う手数料の変更は手動にてお願いします
 admin.order.non_member: 非会員
 admin.order.search_from_customer: 会員から検索・入力
@@ -886,19 +885,19 @@ admin.order.delivery_note_line1: 1行目
 admin.order.delivery_note_line2: 2行目
 admin.order.delivery_note_line3: 3行目
 admin.order.delivery_note_save_input: 入力内容を保存する
-admin.order.delivery_note_download_error: 'ダウンロードに失敗しました'
-admin.order.delivery_note_parameter_error: '出荷IDが指定されていません'
-admin.order.failed_to_change_status: '%name%: %from% から %to% にはステータス変更できません'
-admin.order.failed_to_change_status__short: '%from% から %to% にはステータス変更できません'
-admin.order.skip_change_status: '%name%: ステータス変更をスキップしました'
+admin.order.delivery_note_download_error: "ダウンロードに失敗しました"
+admin.order.delivery_note_parameter_error: "出荷IDが指定されていません"
+admin.order.failed_to_change_status: "%name%: %from% から %to% にはステータス変更できません"
+admin.order.failed_to_change_status__short: "%from% から %to% にはステータス変更できません"
+admin.order.skip_change_status: "%name%: ステータス変更をスキップしました"
 
 # 出荷CSV雛形
 admin.order.shipping_csv.shipping_id_col: 出荷ID
-admin.order.shipping_csv.shipping_id_description: ''
+admin.order.shipping_csv.shipping_id_description: ""
 admin.order.shipping_csv.tracking_number_col: お問い合わせ番号
-admin.order.shipping_csv.tracking_number_description: ''
+admin.order.shipping_csv.tracking_number_description: ""
 admin.order.shipping_csv.shipping_date_col: 出荷日
-admin.order.shipping_csv.shipping_date_description: '出荷日を「YYYY-MM-DD」の形式で設定'
+admin.order.shipping_csv.shipping_date_description: "出荷日を「YYYY-MM-DD」の形式で設定"
 
 #------------------------------------------------------------------------------------
 # 会員
@@ -972,23 +971,23 @@ admin.content.layout_preview_code: コードプレビュー
 admin.content.layout_preview_code__confirm_title: ブロックのコードプレビュー
 admin.content.layout_preview_code__confirm_message: 編集が必要な場合はブロック編集画面から編集してください（この時レイアウト設定は保存されません）
 admin.content.layout_preview_code__confirm_move_to_block: コードを編集
-admin.content.layout_move_to__confirm_title: 'ブロックを移動'
+admin.content.layout_move_to__confirm_title: "ブロックを移動"
 admin.content.layout_move_to__confirm_message: ブロックの移動先を選択してください
 admin.content.layout_move_to__execute: 移動
-admin.content.layout_section__unused: '未使用ブロック'
-admin.content.layout_section__head: '<head></head>タグ内'
-admin.content.layout_section__body_after: '<body>タグ直後'
-admin.content.layout_section__header: '#header'
-admin.content.layout_section__contents_top: '#contents_top'
-admin.content.layout_section__side_left: '#side_left'
+admin.content.layout_section__unused: "未使用ブロック"
+admin.content.layout_section__head: "<head></head>タグ内"
+admin.content.layout_section__body_after: "<body>タグ直後"
+admin.content.layout_section__header: "#header"
+admin.content.layout_section__contents_top: "#contents_top"
+admin.content.layout_section__side_left: "#side_left"
 admin.content.layout_section__main: Main
-admin.content.layout_section__main_top: '#main_top'
-admin.content.layout_section__main_bottom: '#main_bottom'
-admin.content.layout_section__side_right: '#side_right'
-admin.content.layout_section__contents_bottom: '#contents_bottom'
-admin.content.layout_section__footer: '#footer'
-admin.content.layout_section__drawer: '#drawer'
-admin.content.layout_section__close_body_before: '</body>タグ直前'
+admin.content.layout_section__main_top: "#main_top"
+admin.content.layout_section__main_bottom: "#main_bottom"
+admin.content.layout_section__side_right: "#side_right"
+admin.content.layout_section__contents_bottom: "#contents_bottom"
+admin.content.layout_section__footer: "#footer"
+admin.content.layout_section__drawer: "#drawer"
+admin.content.layout_section__close_body_before: "</body>タグ直前"
 admin.content.page_name: ページ名
 admin.content.page__card_title: ページ設定
 admin.content.page_url: URL
@@ -1114,8 +1113,7 @@ admin.setting.shop.payment.unlimited: 無制限
 admin.setting.shop.payment.payment_id: ID
 admin.setting.shop.payment.payment_name: 支払方法名
 admin.setting.shop.payment.logo_image: ロゴ画像
-admin.setting.shop.payment.logo_image_size: '推奨サイズ : 500px × 100px'
-
+admin.setting.shop.payment.logo_image_size: "推奨サイズ : 500px × 100px"
 
 #------------------------------------------------------------------------------------
 # 設定：店舗設定：配送方法設定
@@ -1225,8 +1223,8 @@ admin.setting.system.security.ip_limit_sample: |
   192.0.2.1
 admin.setting.system.security.force_ssl: SSLを強制
 admin.setting.system.security.force_ssl_description: httpsからの接続でなければSSL制限を設定できません。
-admin.setting.system.security.ip_limit_invalid_ipv4: '%ip%はIPv4アドレスではありません。'
-admin.setting.system.security.ip_limit_invalid_https: 'httpの場合には設定できません。'
+admin.setting.system.security.ip_limit_invalid_ipv4: "%ip%はIPv4アドレスではありません。"
+admin.setting.system.security.ip_limit_invalid_https: "httpの場合には設定できません。"
 admin.setting.system.security.admin_url_warning: 管理画面URLは、セキュリティのため推測されにくいものを設定してください。
 admin.setting.system.security.not_found_env_file: .envファイルが見つかりません。.envを利用していない場合はセキュリティ設定を管理画面から変更できません。
 
@@ -1279,7 +1277,7 @@ admin.store.template.upload_new_template: 新規テンプレートアップロ�
 admin.store.template.template_name: テンプレート名
 admin.store.template.template_code: テンプレートコード
 admin.store.template.template_file: テンプレートファイル
-admin.store.template.file_format: 'File format: zip,tar,tar.gz'
+admin.store.template.file_format: "File format: zip,tar,tar.gz"
 admin.store.template.delete_error__default_template: デフォルトテンプレートは削除できません
 admin.store.template.delete_error__current_template: 設定中のテンプレートは削除できません
 admin.store.template.template_code_already_exists: テンプレートコードは既に利用されています
@@ -1318,9 +1316,8 @@ admin.store.package.api.0.error: オーナーズストアとの通信に失敗�
 admin.store.package.api.403.error: オーナーズストアの認証に失敗しました。認証キーの設定を確認してください。
 admin.store.package.api.500.error: オーナーズストアとの通信に失敗しました。時間を置いてもう一度お試しください。
 admin.plugin.uninstall.error.not_disable: プラグインを無効にしてください。
-admin.plugin.uninstall.depend: '「%depend_name%」が「%name%」に依存しているため削除できません。'
-admin.plugin.disable.depend: '「%name%」を無効にする前に、「%depend_name%」を無効にしてください。 '
-
+admin.plugin.uninstall.depend: "「%depend_name%」が「%name%」に依存しているため削除できません。"
+admin.plugin.disable.depend: "「%name%」を無効にする前に、「%depend_name%」を無効にしてください。 "
 
 # TODO: メッセージ精査
 admin.store.plugin.popup.delete.confirm.title: プラグインの削除を確認する
@@ -1383,13 +1380,13 @@ admin.store.plugin_owners_confirm.844: DL数
 admin.store.plugin_owners_confirm.845: プラグインバージョン
 admin.store.plugin_owners_confirm.846: 最終更新日
 admin.store.plugin_owners_confirm.847: EC-CUBE対応バージョン
-admin.store.plugin_owners_confirm.848: 'ファイルサイズ<br>約 %size% KB'
+admin.store.plugin_owners_confirm.848: "ファイルサイズ<br>約 %size% KB"
 admin.store.plugin_owners_confirm.848.1: ファイルサイズ
 admin.store.plugin_owners_confirm.848.2: 約
 admin.store.plugin_owners_confirm.849: ライセンス
-admin.store.plugin_owners_confirm.850: 'このプラグインはEC-CUBE %version%をサポートしていないため、正常に動作しない可能性があります。'
-admin.store.plugin_owners_confirm.851: '%dependency%が必要です。同時にインストールされます。'
-admin.store.plugin_owners_confirm.852: '<strong>制作者</strong> : '
+admin.store.plugin_owners_confirm.850: "このプラグインはEC-CUBE %version%をサポートしていないため、正常に動作しない可能性があります。"
+admin.store.plugin_owners_confirm.851: "%dependency%が必要です。同時にインストールされます。"
+admin.store.plugin_owners_confirm.852: "<strong>制作者</strong> : "
 admin.store.plugin_owners_install.853: オーナーズストア
 admin.store.plugin_owners_install.854: 購入済プラグイン
 admin.store.plugin_owners_install.855: プラグイン一覧
@@ -1403,9 +1400,9 @@ admin.store.plugin_owners_panel.862: 今すぐインストール
 admin.store.plugin_owners_panel.863: プラグインバージョン
 admin.store.plugin_owners_panel.864: 更新日
 admin.store.plugin_owners_panel.865: EC-CUBE対応バージョン
-admin.store.plugin_owners_panel.866: 'ファイルサイズ<br>約 %size% KB'
-admin.store.plugin_owners_panel.867: 'このプラグインはEC-CUBE %version%をサポートしていないため、正常に動作しない可能性があります。'
-admin.store.plugin_owners_panel.868: '<strong>提供元</strong> : '
+admin.store.plugin_owners_panel.866: "ファイルサイズ<br>約 %size% KB"
+admin.store.plugin_owners_panel.867: "このプラグインはEC-CUBE %version%をサポートしていないため、正常に動作しない可能性があります。"
+admin.store.plugin_owners_panel.868: "<strong>提供元</strong> : "
 admin.store.plugin_owners_search.form.placeholder: すべて
 admin.store.plugin_owners_search.form.category: カテゴリ
 admin.store.plugin_owners_search.form.price_type: 有料／無料
@@ -1427,10 +1424,10 @@ admin.store.plugin_owners_search.install: インストール済み
 admin.store.plugin_owners_search.modal.header: 商品詳細
 admin.store.plugin_owners_search.modal.contact: 資料請求・お問い合わせ
 admin.store.plugin_owners_search.modal.manual: マニュアルダウンロード
-admin.store.plugin_owners_search.modal.note: 'このプラグインはEC-CUBE %version%をサポートしていないため、正常に動作しない可能性があります。'
+admin.store.plugin_owners_search.modal.note: "このプラグインはEC-CUBE %version%をサポートしていないため、正常に動作しない可能性があります。"
 admin.store.plugin_owners_search.modal.cancel: 一覧に戻る
 admin.store.plugin_owners_search.modal.submit: インストール確認へ
-admin.store.plugin_owners_search.modal.dependency: '%dependency%が必要です。同時にインストールされます。'
+admin.store.plugin_owners_search.modal.dependency: "%dependency%が必要です。同時にインストールされます。"
 admin.store.plugin_search.884: オーナーズストア
 admin.store.plugin_search.885: プラグインを探す
 admin.store.plugin_search.886: 検索結果
@@ -1484,8 +1481,7 @@ admin.store.unregistered_plugin_table.947: 不明
 admin.store.unregistered_plugin_table.948: 詳細を表示
 admin.store.unregistered_plugin_table.949: 不明
 admin.store.unregistered_plugin_table.950: 設定
-admin.store.install.label: 'プラグイン (zip、tar、tar.gz形式)'
-
+admin.store.install.label: "プラグイン (zip、tar、tar.gz形式)"
 
 #------------------------------------------------------------------------------------
 # 情報
@@ -1606,17 +1602,17 @@ install.site_configuration: サイトの設定
 install.database_configuration: データベースの設定
 install.database_initalization: データベースの初期化
 install.install_completed: インストール完了
-install.start_eccube_installation: '<p>EC-CUBEのインストールを開始します。</p><p>あらかじめ、使用するデータベースの情報（DB名など）をご準備ください。</p>'
+install.start_eccube_installation: "<p>EC-CUBEのインストールを開始します。</p><p>あらかじめ、使用するデータベースの情報（DB名など）をご準備ください。</p>"
 install.cooperation_of_providing_information: 'EC-CUBEのシステム向上・デバッグのため、サイト情報の提供にご協力おねがいいたします。<br>目的以外で利用することはございません。<br><span class="small">（サイト情報：お店のURL、PHPバージョン、DBバージョン）</span>'
 install.accept_infomation_provision: 送信を承諾する
 install.permission_is_valid: アクセス権限は正常です
 install.permission_is_invalid: 以下のファイルまたはディレクトリに書き込み権限を付与してください。
 install.system_requirement: システム要件をご確認ください
-install.required_extension_disabled: '[必須] %module%拡張モジュールが有効になっていません。'
-install.required_database_extension_disabled: '[必須] pdo_pgsql又はpdo_mysql 拡張モジュールを有効にしてください。'
-install.recommend_extension_disabled: '[推奨] %module%拡張モジュールが有効になっていません。'
+install.required_extension_disabled: "[必須] %module%拡張モジュールが有効になっていません。"
+install.required_database_extension_disabled: "[必須] pdo_pgsql又はpdo_mysql 拡張モジュールを有効にしてください。"
+install.recommend_extension_disabled: "[推奨] %module%拡張モジュールが有効になっていません。"
 install.mod_rewrite_unknown: mod_rewrite が有効になっているか不明です。
-install.mod_rewrite_disabled: '[必須] mod_rewrite が有効になっていません。'
+install.mod_rewrite_disabled: "[必須] mod_rewrite が有効になっていません。"
 install.member_name: 管理者
 install.member_department:
 install.shop_name: あなたの店名
@@ -1629,7 +1625,7 @@ install.directory_name_notice: セキュリティのため推測されにくい�
 install.https_only: サイトへのアクセスを、SSL（https）経由に制限します
 install.https_only_notice: httpsからの接続でなければSSL制限を設定できません。
 install.ip_restriction: 管理画面へのアクセスを、以下のIPに制限します
-install.ip_is_invalid: '%ip%はIPv4アドレスではありません。'
+install.ip_is_invalid: "%ip%はIPv4アドレスではありません。"
 install.mail_configuration: メールの設定
 install.smtp_host: SMTPホスト
 install.smtp_port: SMTPポート

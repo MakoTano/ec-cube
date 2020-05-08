@@ -111,6 +111,16 @@ class EntryType extends AbstractType
                             new Assert\NotBlank(),
                         ],
                     ]);
+
+                $form->add('over_twenty', CheckboxType::class, [
+                    'required' => true,
+                    'label' => null,
+                    'mapped' => false,
+                    'constraints' => [
+                        new Assert\NotBlank(),
+                    ],
+                ]);
+
             }
         }
         );
