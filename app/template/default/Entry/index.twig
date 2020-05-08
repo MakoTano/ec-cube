@@ -25,6 +25,9 @@ file that was distributed with this source code.
 		</div>
 		<div class="ec-off1Grid">
 			<div class="ec-off1Grid__cell">
+				<div style="padding-bottom: 15px">
+					<p>{{ 'front.entry.warning_message'|trans|raw|nl2br }}</p>
+				</div>
 				<form method="post" action="{{ url('entry') }}" novalidate class="h-adr">
 					<span class="p-country-name" style="display:none;">Japan</span>
 					{{ form_widget(form._token) }}

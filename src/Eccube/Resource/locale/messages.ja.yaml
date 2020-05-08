@@ -155,6 +155,9 @@ front.contact.complete_message__body: 万一、ご確認メールが届かない
 #------------------------------------------------------------------------------------
 
 front.entry.title: 新規会員登録
+front.entry.warning_message: |
+  会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。納品先は購買時に指定することになります。
+  登録後、会員登録承認メールが確認できましたらログインが可能となります。
 front.entry.terms: 利用規約
 front.entry.agree_with_terms: '<a class="ec-link" href="%url%" target="_blank">利用規約</a>に同意してお進みください'
 front.entry.agree_over_twenty: "私は20歳以上です。"
