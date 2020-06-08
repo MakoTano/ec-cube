@@ -2,6 +2,7 @@ FROM php:7.3-apache-stretch
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html
 
+<<<<<<< HEAD
 RUN /bin/rm /etc/apt/sources.list \
   && { \
   echo 'deb http://cdn.debian.net/debian/ stretch main contrib non-free'; \
