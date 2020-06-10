@@ -209,6 +209,14 @@ file that was distributed with this source code.
                                     </label>
                                     {{ form_errors(form.user_policy_check) }}
                                 </div>
+								<div class="ec-checkbox{{ has_errors(form.over_twenty) ? ' error' }}">
+									<label>
+										{{ form_widget(form.over_twenty) }}
+										{{ 'front.entry.agree_with_terms'|trans({ '%url%': url('help_agreement') })|raw }}
+									</label>
+									{{ form_errors(form.over_twenty) }}
+								</div>
+
                                 <button class="ec-blockBtn--action" type="submit" name="mode" value="confirm">{{ 'front.entry.agree'|trans }}</button>
                                 <a class="ec-blockBtn--cancel" href="{{ url('homepage') }}">{{ 'front.entry.disagree'|trans }}</a>
                             </div>
