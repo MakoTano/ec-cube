@@ -5,12 +5,11 @@ networks:
     driver: bridge
 
 volumes:
-  pg-database:
+  proxy:
     driver: local
+
   mysql-database:
     driver: local
-  # mailcatcher-data:
-  #   driver: local
 
   ### ignore folder volume #####
   var:
@@ -19,6 +18,34 @@ volumes:
     driver: local
 
 services:
+  ### ReverseProxy ############################
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    restart: on-failure
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=jwilder/nginx-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - proxy:/etc/nginx/vhost.d
+      - proxy:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs:ro
+    network_mode: bridge
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: on-failure
+    depends_on:
+      - nginx-proxy
+    volumes:
+      - proxy:/etc/nginx/vhost.d
+      - proxy:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./certs:/etc/nginx/certs:rw
+    network_mode: bridge
+
   ### ECCube4 ##################################
   ec-cube:
     build:
@@ -27,9 +54,6 @@ services:
         # ビルド時のECCubeインストールスクリプトをスキップする場合にtrueを指定する。
         # ビルド時点でDBサーバの起動や接続が出来ない、という場合等にエラーとなるため。
         SKIP_INSTALL_SCRIPT_ON_DOCKER_BUILD: "true"
-    ports:
-      - 80:80
-      - 443:443
     volumes:
       - ".:/var/www/html:cached"
       ### 同期対象からコストの重いフォルダを除外 #####################
@@ -37,20 +61,10 @@ services:
       - "vendor:/var/www/html/vendor"
     networks:
       - backend
-
-  ### Postgres ################################
-  # postgres:
-  #   image: postgres:10
-  #   environment:
-  #     - POSTGRES_DB=eccubedb
-  #     - POSTGRES_USER=dbuser
-  #     - POSTGRES_PASSWORD=secret
-  #   ports:
-  #     - 15432:5432
-  #   volumes:
-  #     - pg-database:/var/lib/postgresql/data
-  #   networks:
-  #     - backend
+    environment:
+      VIRTUAL_HOST: verterebtob.bestbeerjapan.com
+      LETSENCRYPT_HOST: verterebtob.bestbeerjapan.com
+      LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
 
   ### MySQL ##################################
   mysql:
@@ -70,12 +84,3 @@ services:
       - 13306:3306
     networks:
       - backend
-  #
-  # ### Mailcatcher ##################################
-  # mailcatcher:
-  #   image: schickling/mailcatcher
-  #   ports:
-  #     - "1080:1080"
-  #     - "1025:1025"
-  #   networks:
-  #     - backend
