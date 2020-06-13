@@ -63,3 +63,5 @@ gulpconfig.js
 ### logs
 logs/*
 ###
+
+certs/

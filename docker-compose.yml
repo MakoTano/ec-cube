@@ -3,6 +3,8 @@ version: "3"
 networks:
   backend:
     driver: bridge
+  nginx-proxy:
+    external: true
 
 volumes:
   proxy:
@@ -32,7 +34,9 @@ services:
       - proxy:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./certs:/etc/nginx/certs:ro
-    network_mode: bridge
+    networks:
+      - nginx-proxy
+      - backend
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -44,7 +48,6 @@ services:
       - proxy:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./certs:/etc/nginx/certs:rw
-    network_mode: bridge
 
   ### ECCube4 ##################################
   ec-cube:
