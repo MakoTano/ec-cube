@@ -23,7 +23,7 @@ services:
   ### ReverseProxy ############################
   nginx-proxy:
     image: jwilder/nginx-proxy
-    restart: on-failure
+    restart: always
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=jwilder/nginx-proxy
     ports:
@@ -34,13 +34,16 @@ services:
       - proxy:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      - ec-cube
+      - mysql
     networks:
       - nginx-proxy
       - backend
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
-    restart: on-failure
+    restart: always
     depends_on:
       - nginx-proxy
     volumes:
@@ -68,6 +71,7 @@ services:
       VIRTUAL_HOST: verterebtob.bestbeerjapan.com
       LETSENCRYPT_HOST: verterebtob.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
+    restart: always
 
   ### MySQL ##################################
   mysql:
@@ -87,3 +91,4 @@ services:
       - 13306:3306
     networks:
       - backend
+    restart: always
