@@ -68,8 +68,8 @@ services:
     networks:
       - backend
     environment:
-      VIRTUAL_HOST: verterebtob.bestbeerjapan.com
-      LETSENCRYPT_HOST: verterebtob.bestbeerjapan.com
+      VIRTUAL_HOST: ushitorabrewery.bestbeerjapan.com
+      LETSENCRYPT_HOST: ushitorabrewery.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
     restart: always
 
