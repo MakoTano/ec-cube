@@ -10,6 +10,7 @@ RUN /bin/rm /etc/apt/sources.list \
 
 RUN apt-get update && apt-get install -y aptitude
 RUN aptitude install libicu57=57.1-6+deb9u3
+RUN apt-get install --allow-downgrades -y apt=1.4.9
 
 RUN apt-get install --no-install-recommends -y \
   apt-transport-https \
