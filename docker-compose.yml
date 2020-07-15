@@ -77,7 +77,7 @@ services:
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: yes
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: eccubedb
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: secret
