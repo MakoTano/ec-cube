@@ -333,9 +333,9 @@ class OrderPdfService extends TcpdfFpdi
      */
     protected function renderMessageData(array $formData)
     {
-        $this->lfText(27, 70, $formData['message1'], 8); //メッセージ1
-        $this->lfText(27, 74, $formData['message2'], 8); //メッセージ2
-        $this->lfText(27, 78, $formData['message3'], 8); //メッセージ3
+        $this->lfText(27, 75, $formData['message1'], 8); //メッセージ1
+        $this->lfText(27, 79, $formData['message2'], 8); //メッセージ2
+        $this->lfText(27, 83, $formData['message3'], 8); //メッセージ3
     }
 
     /**
@@ -412,9 +412,13 @@ class OrderPdfService extends TcpdfFpdi
         $this->lfText(27, 47, $text, 10);
         $this->lfText(27, 51, $Shipping->getAddr02(), 10); //購入者住所2
 
+        // protected function lfText($x, $y, $text, $size = 0, $style = '')
+        // 会社名
+        $this->lfText(27, 59, $Shipping->getCompanyName(), 12);
+
         // 購入者氏名
         $text = $Shipping->getName01().'　'.$Shipping->getName02().'　様';
-        $this->lfText(27, 59, $text, 11);
+        $this->lfText(27, 64, $text, 9);
 
         // =========================================
         // お買い上げ明細部
