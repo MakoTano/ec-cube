@@ -110,6 +110,9 @@ class OrderPdfService extends TcpdfFpdi
     /** 発行日 @var string */
     private $issueDate = '';
 
+    /** 備考１行目に合言葉を書くと特別な情報を表示する **/
+    private $magicNote = false;
+
     /**
      * OrderPdfService constructor.
      * @param EccubeConfig $eccubeConfig
@@ -191,6 +194,12 @@ class OrderPdfService extends TcpdfFpdi
         // 空文字列の場合のデフォルトメッセージを設定する
         $this->setDefaultData($formData);
 
+        // 備考のマジックノートをフラグへ変換する
+        if ($formData['note1'] == "[お届け日]") {
+            $this->magicNote = true;
+            $formData['note1'] = "";
+        }
+        
         foreach ($ids as $id) {
             $this->lastOrderId = $id;
 
@@ -229,6 +238,14 @@ class OrderPdfService extends TcpdfFpdi
 
             // 出荷詳細情報を描画する
             $this->renderOrderDetailData($Shipping);
+
+            // マジックノートの処理をする
+            if ($this->magicNote){
+                $shippingDeliveryDate = $Shipping->getShippingDeliveryDate();
+                if (!is_null($shippingDeliveryDate)) {
+                    $formData['note1'] = "お届け希望日: ".$shippingDeliveryDate->format('Y/m/d');
+                }
+            }
 
             // 備考を描画する
             $this->renderEtcData($formData);
