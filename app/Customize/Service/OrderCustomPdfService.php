@@ -321,18 +321,18 @@ class OrderCustomPdfService extends TcpdfFpdi
         $this->lfText(125, 60, $this->baseInfoRepository->getShopName(), 8, 'B');
 
         // 都道府県+所在地
-        $text = $this->baseInfoRepository->getPref().$this->baseInfoRepository->getAddr01();
+        $text = '〒'.$this->baseInfoRepository->getPostalCode().' '.$this->baseInfoRepository->getPref().$this->baseInfoRepository->getAddr01();
         $this->lfText(125, 65, $text, 8);
         $this->lfText(125, 69, $this->baseInfoRepository->getAddr02(), 8);
 
         // 電話番号
         $text = 'TEL: '.$this->baseInfoRepository->getPhoneNumber();
-        $this->lfText(125, 72, $text, 8); //TEL・FAX
+        $this->lfText(125, 76, $text, 8); //TEL・FAX
 
         // メールアドレス
         if (strlen($this->baseInfoRepository->getEmail01()) > 0) {
             $text = 'Email: '.$this->baseInfoRepository->getEmail01();
-            $this->lfText(125, 75, $text, 8); // Email
+            $this->lfText(125, 79, $text, 8); // Email
         }
 
         // user_dataにlogo.pngが配置されている場合は優先的に読み込む
@@ -427,17 +427,18 @@ class OrderCustomPdfService extends TcpdfFpdi
 
         // 購入者都道府県+住所1
         // $text = $Order->getPref().$Order->getAddr01();
+        $this->lfText(27, 47, '〒'.$Shipping->getPostalCode(), 10);
         $text = $Shipping->getPref().$Shipping->getAddr01();
-        $this->lfText(27, 47, $text, 10);
-        $this->lfText(27, 51, $Shipping->getAddr02(), 10); //購入者住所2
+        $this->lfText(27, 51, $text, 10);
+        $this->lfText(27, 55, $Shipping->getAddr02(), 10); //購入者住所2
 
         // protected function lfText($x, $y, $text, $size = 0, $style = '')
         // 会社名
-        $this->lfText(27, 59, $Shipping->getCompanyName(), 12);
+        $this->lfText(27, 63, $Shipping->getCompanyName(), 10);
 
         // 購入者氏名
         $text = $Shipping->getName01().'　'.$Shipping->getName02().'　様';
-        $this->lfText(27, 64, $text, 9);
+        $this->lfText(27, 68, $text, 9);
 
         // =========================================
         // お買い上げ明細部
