@@ -156,8 +156,12 @@ front.contact.complete_message__body: In case you do not receive our receipt con
 #------------------------------------------------------------------------------------
 
 front.entry.title: Sign up
+front.entry.warning_message: |
+  Please input <span class="text-danger">the claim information</span> to company name, address and telephone.
+  You will be able to sign in after receiving the authority mail.
 front.entry.terms: Terms & Conditions
 front.entry.agree_with_terms: 'Please accept <a class="ec-link" href="%url%" target="_blank">Terms & Conditions</a> to proceed.'
+front.entry.agree_over_twenty: "I'm over twenty years old."
 front.entry.agree: Accept
 front.entry.disagree: Decline
 front.entry.confirm_title: Sign up - Review
