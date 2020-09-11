@@ -199,7 +199,6 @@ class OrderCustomPdfService extends TcpdfFpdi
         // 備考のマジックノートをフラグへ変換する
         if ($formData['note1'] == "[お届け日]") {
             $this->magicNote = true;
-            $formData['note1'] = "";
         }
         
         foreach ($ids as $id) {
@@ -242,6 +241,7 @@ class OrderCustomPdfService extends TcpdfFpdi
             $this->renderOrderDetailData($Shipping);
 
             // マジックノートの処理をする
+            $formData['note1'] = '';
             if ($this->magicNote){
                 $shippingDeliveryDate = $Shipping->getShippingDeliveryDate();
                 if (!is_null($shippingDeliveryDate)) {
