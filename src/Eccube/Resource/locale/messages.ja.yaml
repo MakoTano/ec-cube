@@ -156,12 +156,8 @@ front.contact.complete_message__body: 万一、ご確認メールが届かない
 #------------------------------------------------------------------------------------
 
 front.entry.title: 新規会員登録
-front.entry.warning_message: |
-  会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。納品先は購買時に指定することになります。
-  登録後、会員登録承認メールが確認できましたらログインが可能となります。
 front.entry.terms: 利用規約
 front.entry.agree_with_terms: '<a class="ec-link" href="%url%" target="_blank">利用規約</a>に同意してお進みください'
-front.entry.agree_over_twenty: "私は20歳以上です。"
 front.entry.agree: 同意する
 front.entry.disagree: 同意しない
 front.entry.confirm_title: 新規会員登録(確認)
@@ -918,7 +914,6 @@ admin.customer.customer_address_registration: お届け先登録
 # ラベル/メッセージ
 admin.customer.customer_id: 会員ID
 admin.customer.customer_info: 会員情報
-admin.customer.customer_info_warning_message: 会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。
 admin.customer.purchase_history: 注文履歴
 admin.customer.purchase_history__not_found: 注文履歴がありません
 admin.customer.customer_address: お届け先住所
@@ -1686,8 +1681,3 @@ purchase_flow.over_stock: 「%name%」の在庫が足りません。
 #------------------------------------------------------------------------------------
 
 command.composer_require_already_installed.not_supported_plugin: %name% %plugin_version% は EC-CUBE %eccube_version% には対応していません。続行しますか？
-front.entry.agree_over_twenty: "私は20歳以上です。"
-front.entry.warning_message: |
-  会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。納品先は購買時に指定することになります。
-  登録後、会員登録承認メールが確認できましたらログインが可能となります。
-
