@@ -245,7 +245,7 @@ class OrderCustomPdfService extends TcpdfFpdi
             if ($this->magicNote){
                 $shippingDeliveryDate = $Shipping->getShippingDeliveryDate();
                 if (!is_null($shippingDeliveryDate)) {
-                    $formData['note1'] = "お届け希望日: ".$shippingDeliveryDate->format('Y/m/d');
+                    $formData['note1'] = "お届け希望日: ".$shippingDeliveryDate->format('Y/m/d').' '.$Shipping->getShippingDeliveryTime();
                 }
             }
 
