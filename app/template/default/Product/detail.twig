@@ -244,6 +244,7 @@ file that was distributed with this source code.
                             <li class="ec-productRole__tag tag_{{ Tag.id }}">{{ Tag }}</li>
                         {% endfor %}
                     </ul>
+                    {% if is_granted('ROLE_USER') %}
                     {# 通常価格 #}
                     {% if Product.hasProductClass -%}
                         <div class="ec-productRole__priceRegular">
@@ -282,6 +283,7 @@ file that was distributed with this source code.
                             </div>
                         {% endif %}
                     </div>
+                    {% endif %}
                     {# 商品コード #}
                     {% if Product.code_min is not empty %}
                         <div class="ec-productRole__code">
@@ -304,6 +306,7 @@ file that was distributed with this source code.
                             {% endfor %}
                         </div>
                     {% endif %}
+                    {% if is_granted('ROLE_USER') %}
                     <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
                         {% if Product.stock_find %}
                             <div class="ec-productRole__actions">
@@ -339,6 +342,7 @@ file that was distributed with this source code.
 
                         {{ form_rest(form) }}
                     </form>
+                    {% endif %}
                     <div class="ec-modal">
                         <div class="ec-modal-overlay">
                             <div class="ec-modal-wrap">
