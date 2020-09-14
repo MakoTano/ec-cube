@@ -245,44 +245,44 @@ file that was distributed with this source code.
                         {% endfor %}
                     </ul>
                     {% if is_granted('ROLE_USER') %}
-                    {# 通常価格 #}
-                    {% if Product.hasProductClass -%}
-                        <div class="ec-productRole__priceRegular">
-                            {% if Product.getPrice01Min is not null and Product.getPrice01IncTaxMin == Product.getPrice01IncTaxMax %}
-                                <span class="ec-productRole__priceRegularPrice">{{ 'front.product.normal_price'|trans }}：<span class="price01-default">{{ Product.getPrice01IncTaxMin|price }}</span></span>
-                                <span class="ec-productRole__priceRegularTax">{{ 'common.tax_include'|trans }}</span>
-                            {% elseif Product.getPrice01Min is not null and Product.getPrice01Max is not null %}
-                                <span class="ec-productRole__priceRegularPrice">{{ 'front.product.normal_price'|trans }}：<span class="price01-default">{{ Product.getPrice01IncTaxMin|price }}～ {{ Product.getPrice01IncTaxMax|price }}</span></span>
+                        {# 通常価格 #}
+                        {% if Product.hasProductClass -%}
+                            <div class="ec-productRole__priceRegular">
+                                {% if Product.getPrice01Min is not null and Product.getPrice01IncTaxMin == Product.getPrice01IncTaxMax %}
+                                    <span class="ec-productRole__priceRegularPrice">{{ 'front.product.normal_price'|trans }}：<span class="price01-default">{{ Product.getPrice01IncTaxMin|price }}</span></span>
+                                    <span class="ec-productRole__priceRegularTax">{{ 'common.tax_include'|trans }}</span>
+                                {% elseif Product.getPrice01Min is not null and Product.getPrice01Max is not null %}
+                                    <span class="ec-productRole__priceRegularPrice">{{ 'front.product.normal_price'|trans }}：<span class="price01-default">{{ Product.getPrice01IncTaxMin|price }}～ {{ Product.getPrice01IncTaxMax|price }}</span></span>
+                                    <span class="ec-productRole__priceRegularTax">{{ 'common.tax_include'|trans }}</span>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            {% if Product.getPrice01Max is not null %}
+                                <span class="ec-productRole__priceRegularPrice">{{ 'front.product.normal_price'|trans }}：{{ Product.getPrice01IncTaxMin|price }}</span>
                                 <span class="ec-productRole__priceRegularTax">{{ 'common.tax_include'|trans }}</span>
                             {% endif %}
-                        </div>
-                    {% else %}
-                        {% if Product.getPrice01Max is not null %}
-                            <span class="ec-productRole__priceRegularPrice">{{ 'front.product.normal_price'|trans }}：{{ Product.getPrice01IncTaxMin|price }}</span>
-                            <span class="ec-productRole__priceRegularTax">{{ 'common.tax_include'|trans }}</span>
                         {% endif %}
-                    {% endif %}
-                    {# 販売価格 #}
-                    <div class="ec-productRole__price">
-                        {% if Product.hasProductClass -%}
-                            {% if Product.getPrice02IncTaxMin == Product.getPrice02IncTaxMax %}
-                                <div class="ec-price">
-                                    <span class="ec-price__price price02-default">{{ Product.getPrice02IncTaxMin|price }}</span>
-                                    <span class="ec-price__tax">{{ 'common.tax_include'|trans }}</span>
-                                </div>
+                        {# 販売価格 #}
+                        <div class="ec-productRole__price">
+                            {% if Product.hasProductClass -%}
+                                {% if Product.getPrice02IncTaxMin == Product.getPrice02IncTaxMax %}
+                                    <div class="ec-price">
+                                        <span class="ec-price__price price02-default">{{ Product.getPrice02IncTaxMin|price }}</span>
+                                        <span class="ec-price__tax">{{ 'common.tax_include'|trans }}</span>
+                                    </div>
+                                {% else %}
+                                    <div class="ec-price">
+                                        <span class="ec-price__price price02-default">{{ Product.getPrice02IncTaxMin|price }} ～ {{ Product.getPrice02IncTaxMax|price }}</span>
+                                        <span class="ec-price__tax">{{ 'common.tax_include'|trans }}</span>
+                                    </div>
+                                {% endif %}
                             {% else %}
                                 <div class="ec-price">
-                                    <span class="ec-price__price price02-default">{{ Product.getPrice02IncTaxMin|price }} ～ {{ Product.getPrice02IncTaxMax|price }}</span>
+                                    <span class="ec-price__price">{{ Product.getPrice02IncTaxMin|price }}</span>
                                     <span class="ec-price__tax">{{ 'common.tax_include'|trans }}</span>
                                 </div>
                             {% endif %}
-                        {% else %}
-                            <div class="ec-price">
-                                <span class="ec-price__price">{{ Product.getPrice02IncTaxMin|price }}</span>
-                                <span class="ec-price__tax">{{ 'common.tax_include'|trans }}</span>
-                            </div>
-                        {% endif %}
-                    </div>
+                        </div>
                     {% endif %}
                     {# 商品コード #}
                     {% if Product.code_min is not empty %}
@@ -307,41 +307,41 @@ file that was distributed with this source code.
                         </div>
                     {% endif %}
                     {% if is_granted('ROLE_USER') %}
-                    <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
-                        {% if Product.stock_find %}
-                            <div class="ec-productRole__actions">
-                                {% if form.classcategory_id1 is defined %}
-                                    <div class="ec-select">
-                                        {{ form_widget(form.classcategory_id1) }}
-                                        {{ form_errors(form.classcategory_id1) }}
-                                    </div>
-                                    {% if form.classcategory_id2 is defined %}
+                        <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
+                            {% if Product.stock_find %}
+                                <div class="ec-productRole__actions">
+                                    {% if form.classcategory_id1 is defined %}
                                         <div class="ec-select">
-                                            {{ form_widget(form.classcategory_id2) }}
-                                            {{ form_errors(form.classcategory_id2) }}
+                                            {{ form_widget(form.classcategory_id1) }}
+                                            {{ form_errors(form.classcategory_id1) }}
                                         </div>
+                                        {% if form.classcategory_id2 is defined %}
+                                            <div class="ec-select">
+                                                {{ form_widget(form.classcategory_id2) }}
+                                                {{ form_errors(form.classcategory_id2) }}
+                                            </div>
+                                        {% endif %}
                                     {% endif %}
-                                {% endif %}
-                                <div class="ec-numberInput"><span>{{ 'common.quantity'|trans }}</span>
-                                    {{ form_widget(form.quantity) }}
-                                    {{ form_errors(form.quantity) }}
+                                    <div class="ec-numberInput"><span>{{ 'common.quantity'|trans }}</span>
+                                        {{ form_widget(form.quantity) }}
+                                        {{ form_errors(form.quantity) }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="ec-productRole__btn">
-                                <button type="submit" class="ec-blockBtn--action add-cart">
-                                    {{ 'front.product.add_cart'|trans }}
-                                </button>
-                            </div>
-                        {% else %}
-                            <div class="ec-productRole__btn">
-                                <button type="button" class="ec-blockBtn--action" disabled="disabled">
-                                    {{ 'front.product.out_of_stock'|trans }}
-                                </button>
-                            </div>
-                        {% endif %}
+                                <div class="ec-productRole__btn">
+                                    <button type="submit" class="ec-blockBtn--action add-cart">
+                                        {{ 'front.product.add_cart'|trans }}
+                                    </button>
+                                </div>
+                            {% else %}
+                                <div class="ec-productRole__btn">
+                                    <button type="button" class="ec-blockBtn--action" disabled="disabled">
+                                        {{ 'front.product.out_of_stock'|trans }}
+                                    </button>
+                                </div>
+                            {% endif %}
 
-                        {{ form_rest(form) }}
-                    </form>
+                            {{ form_rest(form) }}
+                        </form>
                     {% endif %}
                     <div class="ec-modal">
                         <div class="ec-modal-overlay">
