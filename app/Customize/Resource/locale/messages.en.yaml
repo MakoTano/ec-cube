@@ -1,0 +1,6 @@
+front.entry.warning_message: |
+  Please input <span class="text-danger">the claim information</span> to company name, address and telephone.
+  You will be able to sign in after receiving the authority mail.
+front.entry.agree_over_twenty: "I'm over twenty years old."
+admin.customer.customer_info_warning_message: |
+  Please input <span class="text-danger">billing address</span> on company name, address, telephone number columns.
