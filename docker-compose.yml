@@ -23,7 +23,7 @@ services:
   ### ReverseProxy ############################
   nginx-proxy:
     image: jwilder/nginx-proxy
-    restart: on-failure
+    restart: always
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=jwilder/nginx-proxy
     ports:
@@ -43,7 +43,7 @@ services:
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
-    restart: on-failure
+    restart: always
     depends_on:
       - nginx-proxy
     volumes:
@@ -51,7 +51,6 @@ services:
       - proxy:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./certs:/etc/nginx/certs:rw
-    network_mode: bridge
 
   ### ECCube4 ##################################
   ec-cube:
@@ -78,12 +77,10 @@ services:
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: eccubedb
-      # MYSQL_USER: dbuser
-      # MYSQL_PASSWORD: secret
       MYSQL_USER: dbuser
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD: secret
     volumes:
       - mysql-database:/var/lib/mysql
       - "./dockerconfig/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf"
