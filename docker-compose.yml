@@ -3,6 +3,8 @@ version: "3"
 networks:
   backend:
     driver: bridge
+  nginx-proxy:
+    external: true
 
 volumes:
   proxy:
@@ -32,7 +34,12 @@ services:
       - proxy:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./certs:/etc/nginx/certs:ro
-    network_mode: bridge
+    depends_on:
+      - ec-cube
+      - mysql
+    networks:
+      - nginx-proxy
+      - backend
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -62,9 +69,10 @@ services:
     networks:
       - backend
     environment:
-      VIRTUAL_HOST: verterebtob.bestbeerjapan.com
-      LETSENCRYPT_HOST: verterebtob.bestbeerjapan.com
+      VIRTUAL_HOST: jacks-beer.bestbeerjapan.com
+      LETSENCRYPT_HOST: jacks-beer.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
+    restart: always
 
   ### MySQL ##################################
   mysql:
@@ -84,3 +92,4 @@ services:
       - 13306:3306
     networks:
       - backend
+    restart: always
