@@ -84,6 +84,11 @@ services:
         resource: '../../../app/Customize/Controller'
         tags: ['controller.service_arguments']
 
+    Customize\Service\OrderCustomPdfService:
+        decorates: Eccube\Service\OrderPdfService
+        arguments:
+            - '@Eccube\Common\EccubeConfig'
+
     twig.extension.stringloader:
         class: Twig_Extension_StringLoader
         tags: ['twig.extension']
