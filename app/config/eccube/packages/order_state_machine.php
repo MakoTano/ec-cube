@@ -35,6 +35,8 @@ $container->loadFromExtension('framework', [
                 (string) Status::PENDING,
                 (string) Status::PROCESSING,
                 (string) Status::RETURNED,
+                10, // 請求済
+                11, // 入金済（BtoB）
             ],
             'transitions' => [
                 'pay' => [
@@ -64,6 +66,14 @@ $container->loadFromExtension('framework', [
                 'cancel_return' => [
                     'from' => (string) Status::RETURNED,
                     'to' => (string) Status::DELIVERED,
+                ],
+                'claim' => [
+                    'from' => (string) Status::DELIVERED,
+                    'to' => '10',
+                ],
+                'paid_monthly' => [
+                    'from' => '10',
+                    'to' => '11',
                 ],
             ],
         ],
