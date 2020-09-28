@@ -71,8 +71,8 @@ $container->loadFromExtension('framework', [
                     'from' => (string) Status::DELIVERED,
                     'to' => '10',
                 ],
-                'paid_monthly' => [
-                    'from' => '10',
+                'paid_btob' => [
+                    'from' => [(string) Status::DELIVERED, '10'],
                     'to' => '11',
                 ],
             ],
