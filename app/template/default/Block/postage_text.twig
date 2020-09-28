@@ -8,7 +8,140 @@
             </ul>
             商品購入時に送料0円と表記されますが、<span style="font-weight: bold">別途計算の上ご請求いたしますのでご注意くださいませ。</span><br>
             <br>
-            <img src={{asset('assets/img/about/postage_list.png', 'user_data')}} />
+            
+            <div>
+                <h3 style="width: 100%; background-color: lightgray; padding: 10px;">東京都内配送料</h3>
+                <p>
+＊東京都内のみ自社配送を実施しております。<br>
+<br>
+1樽:　送料1000円(税込)<br>
+2樽以上:　送料無料<br>
+<br>
+缶1ケース:　送料1000円(税込)<br>
+缶2ケース以上:　送料無料<br>
+1樽と1ケース注文: 送料無料<br>
+<br>
+月間3樽(ケース)以上の注文で送料無料。<br>
+                </p>
+            </div>
+            
+            <div>
+                <h3 style="width: 100%; background-color: lightgray; padding: 10px;">東京都外 エリア別配送料（缶）</h3>
+                <p style="padding: 10px 0;">※ 1ケース＝24本</p>
+                <table class="postage">
+                    <tr>
+                        <th class="area">エリア</th>
+                        <th class="prefecture">都道府県</th>
+                        <th class="price">1ケースの場合</th>
+                        <th class="price">2ケースの場合</th>
+                    </tr>
+                    <tr>
+                        <td class="area">北海道</td>
+                        <td class="prefecture">北海道</td>
+                        <td class="price">¥2,354</td>
+                        <td class="price">¥2,937</td>
+                    </tr>
+                    <tr>
+                        <td class="area">北東北</td>
+                        <td class="prefecture">青森、秋田、岩手</td>
+                        <td class="price">¥1,914</td>
+                        <td class="price">¥2,266</td>
+                    </tr>
+                    <tr>
+                        <td class="area">南東北</td>
+                        <td class="prefecture">宮城、山形、福島</td>
+                        <td class="price">¥1,870</td>
+                        <td class="price">¥2,200</td>
+                    </tr>
+                    <tr>
+                        <td class="area">関東A</td>
+                        <td class="prefecture">茨城、群馬、栃木、山梨</td>
+                        <td class="price">¥1,628</td>
+                        <td class="price">¥1,980</td>
+                    </tr>
+                    <tr>
+                        <td class="area">関東B</td>
+                        <td class="prefecture">神奈川、千葉、埼玉</td>
+                        <td class="price">¥1,628</td>
+                        <td class="price">¥1,980</td>
+                    </tr>
+                    <tr>
+                        <td class="area">信越</td>
+                        <td class="prefecture">長野、新潟</td>
+                        <td class="price">¥1,804</td>
+                        <td class="price">¥2,112</td>
+                    </tr>
+                    <tr>
+                        <td class="area">東海</td>
+                        <td class="prefecture">静岡、愛知、岐阜、三重</td>
+                        <td class="price">¥1,650</td>
+                        <td class="price">¥2,013</td>
+                    </tr>
+                    <tr>
+                        <td class="area">北陸</td>
+                        <td class="prefecture">富山、石川、福井</td>
+                        <td class="price">¥1,738</td>
+                        <td class="price">¥2,013</td>
+                    </tr>
+                    <tr>
+                        <td class="area">関西</td>
+                        <td class="prefecture">京都、滋賀、奈良、大阪、兵庫、和歌山</td>
+                        <td class="price">¥1,782</td>
+                        <td class="price">¥2,079</td>
+                    </tr>
+                    <tr>
+                        <td class="area">中国</td>
+                        <td class="prefecture">岡山、広島、山口、鳥取、島根</td>
+                        <td class="price">¥2,002</td>
+                        <td class="price">¥2,409</td>
+                    </tr>
+                    <tr>
+                        <td class="area">四国</td>
+                        <td class="prefecture">徳島、香川、高知、愛媛</td>
+                        <td class="price">¥1,903</td>
+                        <td class="price">¥2,255</td>
+                    </tr>
+                    <tr>
+                        <td class="area">北九州</td>
+                        <td class="prefecture">福岡、佐賀、大分、長崎</td>
+                        <td class="price">¥2,134</td>
+                        <td class="price">¥2,596</td>
+                    </tr>
+                    <tr>
+                        <td class="area">南九州</td>
+                        <td class="prefecture">熊本、宮崎、鹿児島</td>
+                        <td class="price">¥2,222</td>
+                        <td class="price">¥2,750</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="margin-top: 20px">
+                <h3 style="width: 100%; background-color: lightgray; padding: 10px;">東京都外 エリア別配送料（樽）</h3>
+                <table class="postage">
+                    <tr>
+                        <th class="area">エリア</th>
+                        <th class="prefecture">都道府県</th>
+                        <th class="price">15L 1樽</th>
+                        <th class="price">15L 2樽</th>
+                        <th class="price">19L 1樽</th>
+                    </tr>
+                    <tr><td class="area">北海道</td><td class="prefecture">北海道</td><td class="price">¥2,354</td><td class="price">¥4,103</td><td class="price">¥2,937</td></tr>
+                    <tr><td class="area">北東北</td><td class="prefecture">青森、秋田、岩手</td><td class="price">¥1,914</td><td class="price">¥2,992</td><td class="price">¥2,266</td></tr>
+                    <tr><td class="area">南東北</td><td class="prefecture">宮城、山形、福島</td><td class="price">¥1,870</td><td class="price">¥2,893</td><td class="price">¥2,200</td></tr>
+                    <tr><td class="area">関東A</td><td class="prefecture">茨城、群馬、栃木、山梨</td><td class="price">¥1,628</td><td class="price">¥2,299</td><td class="price">¥1,980</td></tr>
+                    <tr><td class="area">関東B</td><td class="prefecture">神奈川、千葉、埼玉</td><td class="price">¥1,628</td><td class="price">¥2,299</td><td class="price">¥1,980</td></tr>
+                    <tr><td class="area">信越</td><td class="prefecture">長野、新潟</td><td class="price">¥1,804</td><td class="price">¥2,739</td><td class="price">¥2,112</td></tr>
+                    <tr><td class="area">東海</td><td class="prefecture">静岡、愛知、岐阜、三重</td><td class="price">¥1,650</td><td class="price">¥2,321</td><td class="price">¥2,013</td></tr>
+                    <tr><td class="area">北陸</td><td class="prefecture">富山、石川、福井</td><td class="price">¥1,738</td><td class="price">¥2,574</td><td class="price">¥2,013</td></tr>
+                    <tr><td class="area">関西</td><td class="prefecture">京都、滋賀、奈良、大阪、兵庫、和歌山</td><td class="price">¥1,782</td><td class="price">¥2,673</td><td class="price">¥2,079</td></tr>
+                    <tr><td class="area">中国</td><td class="prefecture">岡山、広島、山口、鳥取、島根</td><td class="price">¥2,002</td><td class="price">¥3,234</td><td class="price">¥2,409</td></tr>
+                    <tr><td class="area">四国</td><td class="prefecture">徳島、香川、高知、愛媛</td><td class="price">¥1,903</td><td class="price">¥2,981</td><td class="price">¥2,255</td></tr>
+                    <tr><td class="area">北九州</td><td class="prefecture">福岡、佐賀、大分、長崎</td><td class="price">¥2,134</td><td class="price">¥3,542</td><td class="price">¥2,596</td></tr>
+                    <tr><td class="area">南九州</td><td class="prefecture">熊本、宮崎、鹿児島</td><td class="price">¥2,222</td><td class="price">¥3,795</td><td class="price">¥2,750</td></tr>
+                </table>
+            </div>
+
         </div>
     </div>
 </div>

@@ -1,1 +1,33 @@
 /* カスタマイズ用CSS */
+.postage {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.postage tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+.postage tr:hover{
+  background-color: #d4f0fd;
+}
+
+.postage th,.postage td{
+  padding: 10px 0;
+}
+
+.postage th {
+    background-color: whitesmoke;
+}
+
+.area {
+    width: 10%;
+}
+.prefecture {
+    width: 35%;
+}
+.price {
+    width: 15%;
+}
