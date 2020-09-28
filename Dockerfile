@@ -2,7 +2,6 @@ FROM php:7.3-apache-stretch
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html
 
-<<<<<<< HEAD
 RUN /bin/rm /etc/apt/sources.list \
   && { \
   echo 'deb http://cdn.debian.net/debian/ stretch main contrib non-free'; \
@@ -11,6 +10,7 @@ RUN /bin/rm /etc/apt/sources.list \
 
 RUN apt-get update && apt-get install -y aptitude
 RUN aptitude install libicu57=57.1-6+deb9u3
+RUN apt-get install --allow-downgrades -y apt=1.4.9
 
 RUN apt-get install --no-install-recommends -y \
   apt-transport-https \
@@ -79,10 +79,10 @@ USER www-data
 RUN composer install \
   --no-scripts \
   --no-autoloader \
-  --no-dev -d ${APACHE_DOCUMENT_ROOT} \
+  -d ${APACHE_DOCUMENT_ROOT} \
   ;
 
-RUN composer dumpautoload -o --apcu --no-dev
+RUN composer dumpautoload -o --apcu
 
 RUN if [ ! -f ${APACHE_DOCUMENT_ROOT}/.env ]; then \
   cp -p .env.dist .env \
