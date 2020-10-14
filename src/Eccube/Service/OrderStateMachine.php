@@ -102,6 +102,7 @@ class OrderStateMachine implements EventSubscriberInterface
         return [
             'workflow.order.completed' => ['onCompleted'],
             'workflow.order.transition.pay' => ['updatePaymentDate'],
+            'workflow.order.transition.paid_btob' => ['updatePaymentDate'],
             'workflow.order.transition.cancel' => [['rollbackStock'], ['rollbackUsePoint']],
             'workflow.order.transition.back_to_in_progress' => [['commitStock'], ['commitUsePoint']],
             'workflow.order.transition.ship' => [['commitAddPoint']],
