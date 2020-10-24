@@ -18,7 +18,6 @@ volumes:
     driver: local
 
 services:
-  ### ECCube4 ##################################
   ec-cube:
     build:
       context: .
@@ -34,10 +33,9 @@ services:
     networks:
       - backend
     ports:
-      - 80:80
+      - 8080:80
       - 443:443
 
-  ### MySQL ##################################
   mysql:
     image: mysql:5.7
     environment:
@@ -51,5 +49,13 @@ services:
       - "./logs/mysql:/var/log/mysql"
     ports:
       - 13306:3306
+    networks:
+      - backend
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
     networks:
       - backend
