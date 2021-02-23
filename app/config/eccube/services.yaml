@@ -185,3 +185,6 @@ services:
     Eccube\Session\Storage\Handler\SameSiteNoneCompatSessionHandler:
         arguments:
             - '@native_file_session_handler'
+ 
+    Plugin\Mixpack\Service\OrderHelperForMixpack:
+        decorates: Eccube\Service\OrderHelper
