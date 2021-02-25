@@ -38,13 +38,16 @@ class PriceChangeValidator extends ItemValidator
         if ($item instanceof OrderItem) {
             $price = $item->getPrice();
             $realPrice = $item->getProductClass()->getPrice02();
+	    $parentItemId = $item->getParentOrderItemId();
         } else {
             // CartItem::priceは税込金額.
             $price = $item->getPrice();
             $realPrice = $item->getProductClass()->getPrice02IncTax();
+	    $parentItemId = $item->getParentCartItemId();
         }
 
-        if ($price != $realPrice) {
+	// ミックスパックが有料設定の場合、選択商品を0円として登録するため
+        if ($price != $realPrice  && is_null($parentItemId)) {
             $item->setPrice($realPrice);
             $this->throwInvalidItemException('front.shopping.price_changed', $item->getProductClass());
         }
