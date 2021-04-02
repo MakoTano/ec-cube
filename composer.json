@@ -33,6 +33,7 @@
         "doctrine/migrations": "^1.8",
         "doctrine/orm": "^2.6",
         "easycorp/easy-log-handler": "^1.0",
+        "ec-cube/KokokaraSelect": "^2.0",
         "ec-cube/plugin-installer": "~0.0.6",
         "egulias/email-validator": "^2.1",
         "friendsofphp/php-cs-fixer": "^2.10",
@@ -196,7 +197,7 @@
             "url": "https://package-api.ec-cube.net",
             "options": {
                 "http": {
-                    "header": ["X-ECCUBE-KEY: XsNZM12P2VxbzJwdXiC2Z1E4mtTfsrO6dPRrGafz"]
+                    "header": ["X-ECCUBE-KEY: e496fe0236707f06b0024f10346318d8eca762a5"]
                 }
             }
         }
