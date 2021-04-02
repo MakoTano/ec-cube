@@ -68,8 +68,8 @@ services:
     networks:
       - backend
     environment:
-      VIRTUAL_HOST: b2bec-demo.bestbeerjapan.com
-      LETSENCRYPT_HOST: b2bec-demo.bestbeerjapan.com
+      VIRTUAL_HOST: b2bec-test.bestbeerjapan.com
+      LETSENCRYPT_HOST: b2bec-test.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
     restart: always
 
