@@ -4,7 +4,7 @@
 
 common.select: 選択してください
 common.select__pref: 都道府県を選択
-common.select__unspecified: 指定なし
+common.select__unspecified: 指定なし（最短）
 common.select__all_products: 全ての商品
 common.required: 必須
 common.back: 戻る
