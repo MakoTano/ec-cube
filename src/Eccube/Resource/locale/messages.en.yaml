@@ -42,7 +42,7 @@ common.address_sample_02: Street, room number (e.g. Fukushima 8-3-15, ABC Apt. 2
 common.phone_number: Phone
 common.phone_number_sample: e.g. 11122223333
 common.mail_address: Email
-common.mail_address_sample: e.g. ec-cube@example.com
+common.mail_address_sample: e.g. sample@example.com
 common.repeated_confirm: Please re-enter
 common.password: Password
 common.password_sample: Alphabets, numbers and symbols %min% - %max%chars
