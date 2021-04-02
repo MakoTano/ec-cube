@@ -42,7 +42,7 @@ common.address_sample_02: Street, room number (e.g. Fukushima 8-3-15, ABC Apt. 2
 common.phone_number: Phone
 common.phone_number_sample: e.g. 11122223333
 common.mail_address: Email
-common.mail_address_sample: e.g. ec-cube@example.com
+common.mail_address_sample: e.g. sample@example.com
 common.repeated_confirm: Please re-enter
 common.password: Password
 common.password_sample: Alphabets, numbers and symbols %min% - %max%chars
@@ -130,6 +130,7 @@ front.block.news.title__ja: What's New
 front.block.news.read_more: More
 front.block.news.see_details: Read details
 front.block.login.customer_registration: Sign up
+front.block.login.customer_registration_doc: Sign up document (external)
 front.block.login.mypage: My Account
 front.block.login.favorite: Favorites
 front.block.login.login: Sign in
@@ -544,6 +545,7 @@ admin.home.sales_summary_count: Sales Volume
 admin.home.recommend_plugins_title: Recommended Plug-ins
 admin.home.recommend_plugins.owner_store: Owners' Store
 admin.home.news_title: What's New
+admin.home.admin_site_document: Manuals
 
 admin.header.user_name: 'Hi %name%!'
 admin.header.logout: Sign out
@@ -922,7 +924,7 @@ admin.customer.customer_address__add: Add a Delivery Address
 admin.customer.customer_address_count_is_over: You have already reached the max number (%eccube_deliv_addr_max%) of delivery addresses. If you want to add more, either delete or overwrite a registered address.
 admin.customer.customer_address_id: Delivery Address ID
 admin.customer.customer_address_info: Delivery Address Info
-admin.customer.multi_search_label: Customer ID / Email / Name
+admin.customer.multi_search_label: Customer ID / Email / Name / Company
 admin.customer.customer_status: Customer Type
 admin.customer.birth_month: Month of Birth
 admin.customer.resend: Resend Temporary Sign-up Email
