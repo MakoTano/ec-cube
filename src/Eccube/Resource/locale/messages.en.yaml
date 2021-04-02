@@ -130,6 +130,7 @@ front.block.news.title__ja: What's New
 front.block.news.read_more: More
 front.block.news.see_details: Read details
 front.block.login.customer_registration: Sign up
+front.block.login.customer_registration_doc: Sign up document (external)
 front.block.login.mypage: My Account
 front.block.login.favorite: Favorites
 front.block.login.login: Sign in
