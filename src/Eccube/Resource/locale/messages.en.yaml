@@ -545,6 +545,7 @@ admin.home.sales_summary_count: Sales Volume
 admin.home.recommend_plugins_title: Recommended Plug-ins
 admin.home.recommend_plugins.owner_store: Owners' Store
 admin.home.news_title: What's New
+admin.home.admin_site_document: Manuals
 
 admin.header.user_name: 'Hi %name%!'
 admin.header.logout: Sign out
