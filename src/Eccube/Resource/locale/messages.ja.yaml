@@ -42,7 +42,7 @@ common.address_sample_02: 番地・ビル名(例：西梅田1丁目6-8)
 common.phone_number: 電話番号
 common.phone_number_sample: 例：11122223333
 common.mail_address: メールアドレス
-common.mail_address_sample: 例：ec-cube@example.com
+common.mail_address_sample: 例：sample@example.com
 common.repeated_confirm: 確認のためもう一度入力してください
 common.password: パスワード
 common.password_sample: 半角英数記号%min%〜%max%文字
@@ -130,6 +130,7 @@ front.block.news.title__ja: 新着情報
 front.block.news.read_more: more
 front.block.news.see_details: 詳しくはこちら
 front.block.login.customer_registration: 新規会員登録
+front.block.login.customer_registration_doc: 新規会員登録〜商品購入まで（外部サイト）
 front.block.login.mypage: マイページ
 front.block.login.favorite: お気に入り
 front.block.login.login: ログイン
@@ -544,6 +545,7 @@ admin.home.sales_summary_count: 売上件数
 admin.home.recommend_plugins_title: おすすめのプラグイン
 admin.home.recommend_plugins.owner_store: オーナーズストア
 admin.home.news_title: お知らせ
+admin.home.admin_site_document: サイトマニュアル
 
 admin.header.user_name: '%name% 様'
 admin.header.logout: ログアウト
@@ -922,7 +924,7 @@ admin.customer.customer_address__add: お届け先住所を追加
 admin.customer.customer_address_count_is_over: お届け先登録の上限の%eccube_deliv_addr_max%件に達しています。お届け先を入力したい場合は、削除か変更を行ってください。
 admin.customer.customer_address_id: お届け先ID
 admin.customer.customer_address_info: お届け先情報
-admin.customer.multi_search_label: 会員ID・メールアドレス・お名前
+admin.customer.multi_search_label: 会員ID・メールアドレス・お名前・会社名
 admin.customer.customer_status: 会員種別
 admin.customer.birth_month: 誕生月
 admin.customer.resend: 仮会員メール再送
