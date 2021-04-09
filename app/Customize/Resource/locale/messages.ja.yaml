@@ -3,3 +3,10 @@ front.entry.warning_message: |
   登録後、会員登録承認メールが確認できましたらログインが可能となります。
 front.entry.agree_over_twenty: "私は20歳以上です。"
 admin.customer.customer_info_warning_message: 会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。
+
+admin.product.alcohol_percentage: アルコール度数
+admin.product.product_csv.alcohol_percentage: アルコール度数
+admin.product.product_csv.alcohol_percentage_description: 0〜999.99の範囲で値を設定してください
+admin.product.csv_invalid_alcohol_percentage: '%line%行目の%name%は0〜999.99の範囲で小数点以下2桁までの値を設定してください。'
+
+front.product.alcohol_percentage: アルコール度数

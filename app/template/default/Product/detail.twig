@@ -306,6 +306,11 @@ file that was distributed with this source code.
                             {% endfor %}
                         </div>
                     {% endif %}
+                    {% if Product.alcohol_percentage is not empty %}
+                    <div class="ec-productRole__alcohol_percentage">
+                        {{ 'front.product.alcohol_percentage'|trans}}： <span class="product-alcohol_percentage">{{ Product.alcohol_percentage }} %</span>
+                    </div>
+                    {% endif %}
                     {% if is_granted('ROLE_USER') %}
                         <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
                             {% if Product.stock_find %}
