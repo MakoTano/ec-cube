@@ -6,4 +6,8 @@ admin.customer.customer_info_warning_message: |
   Please input <span class="text-danger">billing address</span> on company name, address, telephone number columns.
 
 admin.product.alcohol_percentage: Alcohol degree
+admin.product.product_csv.alcohol_percentage: Alcohol degree
+admin.product.product_csv.alcohol_percentage_description: Set a value in the range of 0 to 999.99
+admin.product.csv_invalid_alcohol_percentage: 'For %name% on the %line% line, set a value in the range of 0 to 999.99 and up to two decimal places.'
+
 front.product.alcohol_percentage: Alcohol degree

@@ -45,6 +45,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+use Symfony\Component\Validator\Constraints\Range;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class CsvImportController extends AbstractCsvImportController
@@ -321,6 +323,29 @@ class CsvImportController extends AbstractCsvImportController
                             } else {
                                 $Product->setFreeArea(null);
                             }
+                        }
+
+                        if (isset($row[$headerByKey['alcohol_percentage']]) && StringUtil::isNotBlank($row[$headerByKey['alcohol_percentage']])) {
+                            $errors = $this->validator->validate(
+                                $row[$headerByKey['alcohol_percentage']],
+                                [
+                                    new Range(['min' => 0,'max' => 999.99]),
+                                    new Regex(['pattern' => "/^\d+(\.\d{1,2})?$/u"])
+                                ]
+                            );
+                            if ($errors->count() === 0) {
+                                $Product->setAlcoholPercentage($row[$headerByKey['alcohol_percentage']]);
+                            } else {
+                                $message = trans('admin.product.csv_invalid_alcohol_percentage', ['%line%' => $line, '%name%' => $headerByKey['alcohol_percentage']]);
+                                $this->addErrors($message);
+
+                                return $this->renderWithError($form, $headers);
+                            }
+                        } else {
+                            $message = trans('admin.common.csv_invalid_required', ['%line%' => $line, '%name%' => $headerByKey['alcohol_percentage']]);
+                            $this->addErrors($message);
+
+                            return $this->renderWithError($form, $headers);
                         }
 
                         // 商品画像登録
@@ -1495,6 +1520,11 @@ class CsvImportController extends AbstractCsvImportController
             trans('admin.product.product_csv.tax_rate_col') => [
                 'id' => 'tax_rate',
                 'description' => 'admin.product.product_csv.tax_rate_description',
+                'required' => false,
+            ],
+            trans('admin.product.product_csv.alcohol_percentage') => [
+                'id' => 'alcohol_percentage',
+                'description' => 'admin.product.product_csv.alcohol_percentage_description',
                 'required' => false,
             ],
         ];
