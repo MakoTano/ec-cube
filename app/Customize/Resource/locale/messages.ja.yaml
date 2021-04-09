@@ -3,3 +3,6 @@ front.entry.warning_message: |
   登録後、会員登録承認メールが確認できましたらログインが可能となります。
 front.entry.agree_over_twenty: "私は20歳以上です。"
 admin.customer.customer_info_warning_message: 会社名、住所、電話番号は<span class="text-danger">「ご請求先」</span>のデータを入力ください。
+
+admin.product.alcohol_percentage: アルコール度数
+front.product.alcohol_percentage: アルコール度数
