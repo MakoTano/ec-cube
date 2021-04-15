@@ -2,6 +2,7 @@
 
 namespace Customize\Form\Extension;
 
+use Customize\Form\Type\Master\BeerTypeType;
 use Eccube\Form\Type\Admin\ProductType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -29,6 +30,8 @@ class ProductTypePublishDateExtension extends AbstractTypeExtension
                     'auto_render' => true,
                 ],
             ])
+            // 右ブロック
+            ->add('beer_type', BeerTypeType::class)
             ->add('alcohol_percentage', NumberType::class, [
                 'required' => true,
                 'attr' => [
