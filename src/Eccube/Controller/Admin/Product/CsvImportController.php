@@ -356,7 +356,10 @@ class CsvImportController extends AbstractCsvImportController
                             $errors = $this->validator->validate(
                                 $row[$headerByKey['alcohol_percentage']],
                                 [
-                                    new Range(['min' => 0,'max' => 999.99]),
+                                    new Range([
+                                        'min' => 0,
+                                        'max' => 999.99,
+                                        ]),
                                     new Regex(['pattern' => "/^\d+(\.\d{1,2})?$/u"]),
                                 ]
                             );
