@@ -31,7 +31,11 @@ class ProductTypePublishDateExtension extends AbstractTypeExtension
                 ],
             ])
             // 右ブロック
-            ->add('beer_type', BeerTypeType::class)
+            ->add('beer_type', BeerTypeType::class, [
+                'constraints' => [
+                    new Assert\NotBlank(),
+                ],
+            ])
             ->add('alcohol_percentage', NumberType::class, [
                 'required' => true,
                 'attr' => [
