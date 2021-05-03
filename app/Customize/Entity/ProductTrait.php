@@ -2,6 +2,7 @@
 
 namespace Customize\Entity;
 
+use Customize\Entity\Master\BeerType;
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Annotation\EntityExtension;
 
@@ -14,6 +15,16 @@ trait ProductTrait
      * @ORM\Column(type="datetimetz", nullable=true)
      */
     private $publish_date;
+
+    /**
+     * @var BeerType
+     *
+     * @ORM\ManyToOne(targetEntity="Customize\Entity\Master\BeerType")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="beer_type_id", referencedColumnName="id")
+     * })
+     */
+    private $BeerType;
 
     /**
      * @var string|null
@@ -56,5 +67,29 @@ trait ProductTrait
     public function getAlcoholPercentage(): ?string
     {
         return $this->alcohol_percentage;
+    }
+
+    /**
+     * Set BeerType.
+     *
+     * @param BeerType|null $BeerType
+     *
+     * @return self
+     */
+    public function setBeerType(?BeerType $BeerType): self
+    {
+        $this->BeerType = $BeerType;
+
+        return $this;
+    }
+
+    /**
+     * Get BeerType.
+     *
+     * @return BeerType|null
+     */
+    public function getBeerType(): ?BeerType
+    {
+        return $this->BeerType;
     }
 }
