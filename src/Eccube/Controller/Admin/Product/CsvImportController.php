@@ -13,6 +13,7 @@
 
 namespace Eccube\Controller\Admin\Product;
 
+use Customize\Repository\Master\BeerTypeRepository;
 use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Eccube\Common\Constant;
 use Eccube\Controller\Admin\AbstractCsvImportController;
@@ -45,6 +46,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+use Symfony\Component\Validator\Constraints\Range;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class CsvImportController extends AbstractCsvImportController
@@ -99,6 +102,11 @@ class CsvImportController extends AbstractCsvImportController
      */
     protected $validator;
 
+    /**
+     * @var BeerTypeRepository
+     */
+    protected $BeerTypeRepository;
+
     private $errors = [];
 
     /**
@@ -114,6 +122,7 @@ class CsvImportController extends AbstractCsvImportController
      * @param TaxRuleRepository $taxRuleRepository
      * @param BaseInfoRepository $baseInfoRepository
      * @param ValidatorInterface $validator
+     * @param BeerTypeRepository $BeerTypeRepository
      * @throws \Exception
      */
     public function __construct(
@@ -126,7 +135,8 @@ class CsvImportController extends AbstractCsvImportController
         ProductRepository $productRepository,
         TaxRuleRepository $taxRuleRepository,
         BaseInfoRepository $baseInfoRepository,
-        ValidatorInterface $validator
+        ValidatorInterface $validator,
+        BeerTypeRepository $BeerTypeRepository
     ) {
         $this->deliveryDurationRepository = $deliveryDurationRepository;
         $this->saleTypeRepository = $saleTypeRepository;
@@ -138,6 +148,7 @@ class CsvImportController extends AbstractCsvImportController
         $this->taxRuleRepository = $taxRuleRepository;
         $this->BaseInfo = $baseInfoRepository->get();
         $this->validator = $validator;
+        $this->beerTypeRepository = $BeerTypeRepository;
     }
 
     /**
@@ -321,6 +332,50 @@ class CsvImportController extends AbstractCsvImportController
                             } else {
                                 $Product->setFreeArea(null);
                             }
+                        }
+
+                        if (isset($row[$headerByKey['beer_type']]) && StringUtil::isNotBlank($row[$headerByKey['beer_type']])) {
+                            if (preg_match('/^\d+$/', $row[$headerByKey['beer_type']])) {
+                                $BeerType = $this->beerTypeRepository->find($row[$headerByKey['beer_type']]);
+                                if (!$BeerType) {
+                                    $message = trans('admin.common.csv_invalid_not_found', ['%line%' => $line, '%name%' => $headerByKey['sale_type']]);
+                                    $this->addErrors($message);
+                                } else {
+                                    $Product->setBeerType($BeerType);
+                                }
+                            } else {
+                                $message = trans('admin.common.csv_invalid_not_found', ['%line%' => $line, '%name%' => $headerByKey['sale_type']]);
+                                $this->addErrors($message);
+                            }
+                        } else {
+                            $message = trans('admin.common.csv_invalid_required', ['%line%' => $line, '%name%' => $headerByKey['sale_type']]);
+                            $this->addErrors($message);
+                        }
+
+                        if (isset($row[$headerByKey['alcohol_percentage']]) && StringUtil::isNotBlank($row[$headerByKey['alcohol_percentage']])) {
+                            $errors = $this->validator->validate(
+                                $row[$headerByKey['alcohol_percentage']],
+                                [
+                                    new Range([
+                                        'min' => 0,
+                                        'max' => 999.99,
+                                        ]),
+                                    new Regex(['pattern' => "/^\d+(\.\d{1,2})?$/u"]),
+                                ]
+                            );
+                            if ($errors->count() === 0) {
+                                $Product->setAlcoholPercentage($row[$headerByKey['alcohol_percentage']]);
+                            } else {
+                                $message = trans('admin.product.csv_invalid_alcohol_percentage', ['%line%' => $line, '%name%' => $headerByKey['alcohol_percentage']]);
+                                $this->addErrors($message);
+
+                                return $this->renderWithError($form, $headers);
+                            }
+                        } else {
+                            $message = trans('admin.common.csv_invalid_required', ['%line%' => $line, '%name%' => $headerByKey['alcohol_percentage']]);
+                            $this->addErrors($message);
+
+                            return $this->renderWithError($form, $headers);
                         }
 
                         // 商品画像登録
@@ -1495,6 +1550,16 @@ class CsvImportController extends AbstractCsvImportController
             trans('admin.product.product_csv.tax_rate_col') => [
                 'id' => 'tax_rate',
                 'description' => 'admin.product.product_csv.tax_rate_description',
+                'required' => false,
+            ],
+            trans('admin.product.product_csv.alcohol_percentage') => [
+                'id' => 'alcohol_percentage',
+                'description' => 'admin.product.product_csv.alcohol_percentage_description',
+                'required' => false,
+            ],
+            trans('admin.product.product_csv.beer_type_col') => [
+                'id' => 'beer_type',
+                'description' => 'admin.product.product_csv.beer_type_description',
                 'required' => false,
             ],
         ];
