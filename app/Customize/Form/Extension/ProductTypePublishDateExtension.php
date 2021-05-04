@@ -37,14 +37,12 @@ class ProductTypePublishDateExtension extends AbstractTypeExtension
                 ],
             ])
             ->add('alcohol_percentage', NumberType::class, [
-                'required' => true,
                 'attr' => [
                     'min' => 0,
                     'max' => 999.99,
                     'step' => '.2',
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(),
                     new Assert\Range([
                         'min' => 0,
                         'max' => 999.99,
