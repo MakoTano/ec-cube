@@ -5902,6 +5902,9 @@ Styleguide 14.1
 .ec-productRole .ec-productRole__code {
     padding: 14px 0;
     border-bottom: 1px dotted #ccc; }
+.ec-productRole .ec-productRole__alcohol_percentage {
+    padding: 14px 0;
+    border-bottom: 1px dotted #ccc; }
 .ec-productRole .ec-productRole__category {
     padding: 14px 0;
     border-bottom: 1px dotted #ccc; }
