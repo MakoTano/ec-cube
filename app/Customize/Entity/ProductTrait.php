@@ -3,6 +3,7 @@
 namespace Customize\Entity;
 
 use Customize\Entity\Master\BeerType;
+use Customize\Entity\ProductBeerContainer;
 use Doctrine\ORM\Mapping as ORM;
 use Eccube\Annotation\EntityExtension;
 
@@ -25,6 +26,13 @@ trait ProductTrait
      * })
      */
     private $BeerType;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Customize\Entity\ProductBeerContainer", mappedBy="Product", cascade={"persist","remove"})
+     */
+    private $ProductBeerContainers;
 
     /**
      * @var string|null
@@ -91,5 +99,41 @@ trait ProductTrait
     public function getBeerType(): ?BeerType
     {
         return $this->BeerType;
+    }
+
+    /**
+     * Add ProductBeerContainer.
+     *
+     * @param ProductBeerContainer $ProductBeerContainer
+     *
+     * @return self
+     */
+    public function addProductBeerContainer(ProductBeerContainer $ProductBeerContainer)
+    {
+        $this->ProductBeerContainers[] = $ProductBeerContainer;
+
+        return $this;
+    }
+
+    /**
+     * Remove ProductBeerContainer.
+     *
+     * @param ProductBeerContainer $ProductBeerContainer
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeProductBeerContainer(ProductBeerContainer $ProductBeerContainer)
+    {
+        return $this->ProductBeerContainers->removeElement($ProductBeerContainer);
+    }
+
+    /**
+     * Get ProductBeerContainers.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProductBeerContainers()
+    {
+        return $this->ProductBeerContainers;
     }
 }
