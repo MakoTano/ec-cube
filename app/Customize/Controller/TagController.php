@@ -36,20 +36,27 @@ class TagController extends \Eccube\Controller\AbstractController
      *     name="customize_tag_search_item",
      *     methods={"PUT"},
      *     requirements={
-     *          "operation": "add|remove",
+     *          "operation": "add|remove|clear",
      *          "tag_id": "\d+"
      *     }
      * )
      */
-    public function tagSearchItem($operation, $tag_id)
+    public function tagSearchItem($operation, $tag_id = null)
     {
+        $session = $this->session;
+
+        if ('clear' == $operation || null === $tag_id) {
+            $session->set('eccube.front.customize.tag.search', []);
+
+            return $this->redirectToRoute('product_list');
+        }
+
         $Tag = $this->tagRepository->find($tag_id);
 
         if (null === $Tag) {
             return $this->redirectToRoute('product_list');
         }
 
-        $session = $this->session;
         $tag_id_list = $session->get('eccube.front.customize.tag.search');
 
         if (null === $tag_id_list) {
