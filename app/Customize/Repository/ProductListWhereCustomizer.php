@@ -38,7 +38,15 @@ class ProductListWhereCustomizer implements QueryCustomizer
      */
     public function customize(QueryBuilder $builder, $params, $queryKey)
     {
-        $tag_id_list = $this->session->get('eccube.front.customize.tag.search');
+        if ($params['tag_ids']->count() > 0) {
+            $tag_id_list = [];
+            foreach ($params['tag_ids'] as $Tag) {
+                $tag_id_list[] = $Tag->getId();
+            }
+            $this->session->set('eccube.front.customize.tag.search', $tag_id_list);
+        } else {
+            $tag_id_list = $this->session->get('eccube.front.customize.tag.search');
+        }
 
         if (null !== $tag_id_list && !empty($tag_id_list)) {
             foreach ($tag_id_list as $key => $tag_id) {

@@ -133,9 +133,11 @@ file that was distributed with this source code.
         <div class="ec-searchnavRole">
             <form name="form1" id="form1" method="get" action="?">
                 {% for item in search_form %}
+                    {% if 'tag_ids' != item.vars.full_name %}
                     <input type="hidden" id="{{ item.vars.id }}"
                            name="{{ item.vars.full_name }}"
                            {% if item.vars.value is not empty %}value="{{ item.vars.value }}" {% endif %}/>
+                    {% endif %}
                 {% endfor %}
             </form>
             <div class="ec-searchnavRole__topicpath">
