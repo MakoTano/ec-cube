@@ -388,7 +388,9 @@ showClose: true
 										{% for Customer in pagination %}
 											<tr id="ex-customer-{{ Customer.id }}">
 												<td class="align-middle pl-3">{{ Customer.id }}</td>
-                                                <td class="align-middle">{{ Customer.company_name }}</td>
+                                                <td class="align-middle">
+													<a href="{{ url('admin_customer_edit', { 'id': Customer.id}) }}">{{ Customer.company_name }}</a>
+												</td>
 												<td class="align-middle">
 													<a href="{{ url('admin_customer_edit', { 'id': Customer.id}) }}">{{ Customer.name01 }}&nbsp;{{ Customer.name02 }}</a>
 												</td>
