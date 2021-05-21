@@ -83,7 +83,7 @@ class PriceChangeValidator extends ItemValidator
         if ($this->authorizationChecker->isGranted('ROLE_USER')) {
             $Customer = $this->getUser();
             // 会員グループID取得
-            $CustomerGroupMemberShip = $this->customerGroupMembershipRepository->find($Customer->getId());
+            $CustomerGroupMemberShip = $this->customerGroupMembershipRepository->findCustomerGroupMembership($Customer->getId());
             if(!empty($CustomerGroupMemberShip)){
                 $groupId = $CustomerGroupMemberShip->getGroupId();
             }
@@ -101,22 +101,30 @@ class PriceChangeValidator extends ItemValidator
         }
 
         // 会員グループ用金額修正
-        if($discountRate != 0){
-            $ProductClass = $this->productClassRepository->find($item->getProductClass()->getId());
+        $updateGroupPriceFlag = false;
+        $ProductClass = $this->productClassRepository->find($item->getProductClass()->getId());
 
-            $CustomerGroupProductClass = $this->customerGroupProductClassRepository->findBy(['product_class_id' => $ProductClass->getId(), 'group_id' => $groupId]);
-            if(!empty($CustomerGroupProductClass) && $CustomerGroupProductClass[0]->getPrice() > 0){
-                // グループ別商品規格価格セット
-                $newPrice = $CustomerGroupProductClass[0]->getPrice();
-            } else {
-                // グループ別割引適用
-                $productPrice = $ProductClass->getPrice02();
-                if($PriceRule->getRuleType()->getId() == RuleType::RELATIVE_DISCOUNT){
+        $CustomerGroupProductClass = $this->customerGroupProductClassRepository->findBy(['product_class_id' => $ProductClass->getId(), 'group_id' => $groupId]);
+        if(!empty($CustomerGroupProductClass) && $CustomerGroupProductClass[0]->getPrice() > 0){
+            // グループ別商品規格価格セット
+            $newPrice = $CustomerGroupProductClass[0]->getPrice();
+            $updateGroupPriceFlag = true;
+        } else {
+            // グループ別割引適用
+            $productPrice = $ProductClass->getPrice02();
+	    if($discountRate > 0){
+	        if($PriceRule->getRuleType()->getId() == RuleType::RELATIVE_DISCOUNT){
                     $newPrice = $productPrice - ($productPrice*($discountRate/100));
                 } else {
                     $newPrice = $productPrice - $discountRate;
+		}
+		if($newPrice < 0){
+                    $newPrice = (int)0;
                 }
-            }
+                $updateGroupPriceFlag = true;
+	    }
+	}
+        if($updateGroupPriceFlag && $newPrice >= 0){
             if ($item instanceof OrderItem) {
                 if($realPrice != $newPrice){
                     $realPrice = $newPrice;
