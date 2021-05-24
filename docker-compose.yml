@@ -68,8 +68,8 @@ services:
     networks:
       - backend
     environment:
-      VIRTUAL_HOST: stage-alpha.bestbeerjapan.com
-      LETSENCRYPT_HOST: stage-alpha.bestbeerjapan.com
+      VIRTUAL_HOST: inkhornbrewing-ec.bestbeerjapan.com
+      LETSENCRYPT_HOST: inkhornbrewing-ec.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
     restart: always
 
