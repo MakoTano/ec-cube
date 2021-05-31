@@ -68,8 +68,8 @@ services:
     networks:
       - backend
     environment:
-      VIRTUALHOST: yokohamabeer.bestbeerjapan.com
-      LETSENCRYPT_HOST: yokohamabeer.bestbeerjapan.com
+      VIRTUALHOST: yokohamabeerrenew.bestbeerjapan.com
+      LETSENCRYPT_HOST: yokohamabeerrenew.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
     restart: always
 

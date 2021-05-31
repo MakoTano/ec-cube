@@ -1,3 +1,0 @@
-services:
-    Eccube\Service\Cart\CartItemComparator:
-      class: Plugin\Mixpack\Service\Cart\MixpackComparator
