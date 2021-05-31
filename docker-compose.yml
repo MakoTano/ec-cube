@@ -22,7 +22,7 @@ volumes:
 services:
   ### ReverseProxy ############################
   nginx-proxy:
-    image: jwilder/nginx-proxy:0.8.0
+    image: jwilder/nginx-proxy
     restart: always
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=jwilder/nginx-proxy
@@ -42,7 +42,7 @@ services:
       - backend
 
   letsencrypt:
-    image: jrcs/letsencrypt-nginx-proxy-companion:v1.13.1
+    image: jrcs/letsencrypt-nginx-proxy-companion
     restart: always
     depends_on:
       - nginx-proxy
@@ -68,8 +68,8 @@ services:
     networks:
       - backend
     environment:
-      VIRTUALHOST: yokohamabeerrenew.bestbeerjapan.com
-      LETSENCRYPT_HOST: yokohamabeerrenew.bestbeerjapan.com
+      VIRTUAL_HOST: yokohamabeer.bestbeerjapan.com
+      LETSENCRYPT_HOST: yokohamabeer.bestbeerjapan.com
       LETSENCRYPT_EMAIL: sysadmin@bestbeerjapan.com
     restart: always
 
